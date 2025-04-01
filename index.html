@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Josh Robertson's Portfolio</title>
+  <link rel="icon" type="image/x-icon" href="images/JR.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <a href="./index.html" class="navbar-title">Josh Robertson</a>
+    <div class="navbar__toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+    <ul id="item" class="navbar__menu">
+      <li class="navbar__item"><a href="#homelink" class="navbar__links">Home</a></li>
+      <li class="navbar__item"><a href="#aboutlink" class="navbar__links">About</a></li>
+      <li class="navbar__item"><a href="#experiencelink" class="navbar__links">Experience</a></li>
+      <li class="navbar__item"><a href="#projectslink" class="navbar__links">Projects</a></li>
+      <li class="navbar__item"><a href="#contactlink" class="navbar__links">Contact</a></li>
+      <li class="navbar__item">
+        <a href="./Josh_Robertson_Resume (3).pdf" target="_blank" class="navbar__links">
+          <i class="fa-solid fa-file-pdf"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <script src="js/menu.js"></script>
+  <script src="js/rotatingWords.js"></script>
+  <script src="js/maptoggle.js"></script>
+  <script src="js/smoothScroll.js"></script>
+  <script src="js/contactform.js"></script>
+  <script src="js/projectHover.js"></script>
+
+  <!-- Home Section -->
+  <div>
+    <p id="homelink" class="emptyDivHome"></p>
+  </div>
+  <div class="back" style="background-image: url('assets/img/back.jpg'); background-size: cover; background-position: center; height: 100vh; width: 100%; position: relative;">
+    <div class="overlay"></div>
+  </div>
+  <div class="content">
+    <div class="mid">
+      <h1 id="home">Josh Robertson</h1>
+      <div class="outer-headings">
+        <div class="words">
+          <p class="static">I'm a&nbsp;&nbsp;&nbsp;</p> 
+          <span>
+            Developer<br>
+            Engineer<br>
+            Innovator<br>
+          </span>
+        </div>
+      </div>
+      <a href="https://github.com/joshrobertson8" target="_blank"><i class="fa-brands fa-github"></i></a>
+      <a href="https://linkedin.com/in/josh-robertson-66b370330" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+
+    <!-- About Section -->
+    <div>
+      <p id="aboutlink" class="emptyDiv"></p>
+    </div>
+    <section class="About-Section">
+      <div class="section-titles">
+        <h1 id="about">About</h1>
+      </div>
+      <div class="intro-container">
+        <p id="intro">
+          Hi! My name is Josh Robertson and I am a student at the University of North Carolina at Chapel Hill pursuing a B.S. in Computer Science with a Minor in Pre‑Business and Mathematics.
+        </p>
+      </div>
+      <br>
+      <div class="aboutcontainer">
+        <div class="pic">
+          <img id="headshot" src="images/headshot.jpg" alt="Josh Robertson Headshot" />
+        </div>
+        <div class="description">
+          <p id="body">
+            I have a strong passion for developing innovative software solutions and contributing to impactful technology initiatives. With expertise in Python, Java, C, and JavaScript, I thrive in collaborative environments and enjoy tackling challenging projects.
+          </p>
+          <br>
+          <p id="body">
+            My experiences range from building scalable backend services during my internship at Apiture to developing educational materials with the UNC CS + Social Good Education Team. I love turning ideas into robust applications.
+          </p>
+          <br>
+          <p id="end">
+            Scroll down to learn more about my experience, projects, and how to get in touch.
+          </p>
+        </div>
+      </div>
+
+      <!-- Club/Team Section (Optional) -->
+      <div class="CLUB-SECTION">
+        <div class="club-container">
+          <a href="https://cssgunc.org/" target="_blank" class="club-box">
+            <img src="assets/img/cssglogo.jpeg" alt="UNC CS + Social Good" class="club-image" />
+            <p class="club-title">UNC CS + Social Good</p>
+            <p class="club-role">Developer</p>
+            <p class="club-description">
+              Creating educational materials and workshops to make computer science accessible to underserved communities.
+            </p>
+            <div class="club-hover">
+              <p>Learn More!</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <div>
+      <p id="experiencelink" class="emptyDiv"></p>
+    </div>
+    <section class="Experience-Section">
+      <div class="section-titles">
+        <h1 id="experience">Experience</h1>
+      </div>
+      <div class="resume-content">
+        <p>
+          Download a PDF of my Resume <a href="./Josh_Robertson_Resume (3).pdf" target="_blank" id="resume_hand_link">here</a>.
+        </p>
+      </div>
+      <div class="content-wrapper">
+        <!-- Left Column: Technical Skills & Certifications -->
+        <div class="left-section">
+          <div class="Languages">
+            <h3 class="expsection-title">Technical Skills:</h3>
+            <div id="skills-list" class="skills-list">
+              <div class="skill-box">
+                <i class="fa-solid fa-code"></i>
+                <strong>Frontend</strong>
+                <ul>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>JavaScript</li>
+                </ul>
+              </div>
+              <!-- Repeat similar blocks for Backend and Tools -->
+            </div>
+          </div>
+          <div class="certifications">
+            <h3 class="expsection2-title">Certifications:</h3>
+            <div class="certification-list">
+              <div class="certification-box">
+                <img src="assets/img/HackerRank.png" alt="HackerRank Python" />
+                <p>HackerRank Python (Basic)</p>
+              </div>
+              <!-- Add additional certification cards as needed -->
+            </div>
+          </div>
+        </div>
+        <!-- Right Column: Work Experience -->
+        <div class="right-section">
+          <h3 class="expsection-title">Work Experience</h3>
+          <div class="work-experience">
+            <div class="experience">
+              <h4 class="company">Apiture</h4>
+              <h5 class="position">Software Engineering Intern</h5>
+              <p class="year">May 2024 – Aug 2024</p>
+              <ul class="description">
+                <li>Developed and tested RESTful APIs for a cloud‑based digital banking platform.</li>
+                <li>Built and maintained end‑to‑end API test suites using Playwright and TypeScript.</li>
+                <li>Collaborated in senior‑led teams during sprint planning, standups, and code reviews.</li>
+              </ul>
+            </div>
+            <div class="experience">
+              <h4 class="company">UNC CS + Social Good Education Team</h4>
+              <h5 class="position">Developer</h5>
+              <p class="year">Jan 2025 – Present</p>
+              <ul class="description">
+                <li>Designed and delivered coding workshops and educational materials for underserved communities.</li>
+                <li>Collaborated with fellow students to create engaging lesson plans.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <div>
+      <p id="projectslink" class="emptyDiv"></p>
+    </div>
+    <section class="Project-Section">
+      <div class="section-titles">
+        <h1 id="projects">Projects</h1>
+      </div>
+      <section class="proj-containers">
+        <!-- Cover Letter Generator -->
+        <div class="project-box" id="projectbox1">
+          <h3 class="project-title">Cover Letter Generator</h3>
+          <p class="project-description">
+            Developed a web application that generates personalized cover letters using Google’s Generative AI. Features include drag-and-drop resume upload and dynamic job description input.
+          </p>
+          <p class="project-languages"><em>Flask | HTML/CSS | Google Generative AI</em></p>
+          <div class="project-gif">
+            <img src="assets/img/cover_letter_demo.gif" alt="Cover Letter Generator Demo" />
+          </div>
+          <div class="view-project">
+            <a href="https://github.com/joshrobertson8/Cover-gen" target="_blank">View Project on Github</a>
+          </div>
+        </div>
+        <!-- Conversational Translator -->
+        <div class="project-box" id="projectbox2">
+          <h3 class="project-title">Conversational Translator</h3>
+          <p class="project-description">
+            Built a real-time, context-aware translation web application enabling seamless multilingual conversations using Flask and Google Generative AI.
+          </p>
+          <p class="project-languages"><em>Flask | HTML/CSS | Google Generative AI</em></p>
+          <div class="project-gif">
+            <img src="assets/img/translator_demo.gif" alt="Conversational Translator Demo" />
+          </div>
+          <div class="view-project">
+            <a href="https://github.com/joshrobertson8/port-to-language" target="_blank">View Project on Github</a>
+          </div>
+        </div>
+        <!-- Chess Engine -->
+        <div class="project-box" id="projectbox3">
+          <h3 class="project-title">Chess Engine</h3>
+          <p class="project-description">
+            Created an interactive chess game featuring an AI opponent that uses minimax and alpha‑beta pruning, including game features like automatic queen promotion and comprehensive endgame detection.
+          </p>
+          <p class="project-languages"><em>Python | Pygame</em></p>
+          <div class="project-gif">
+            <img src="assets/img/chess_engine_demo.gif" alt="Chess Engine Demo" />
+          </div>
+          <div class="view-project">
+            <a href="https://github.com/joshrobertson8/chess-engine" target="_blank">View Project on Github</a>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- Contact Section -->
+    <div>
+      <p id="contactlink" class="emptyDiv"></p>
+    </div>
+    <section class="Contact-Section">
+      <div class="section-titles">
+        <h1 id="contact">Contact</h1>
+      </div>
+      <div class="contact-container">
+        <div class="contact-leftdiv">
+          <p><i class="fa-solid fa-location-dot" id="c-icon"></i> <span class="c-header-text">Location:</span> Chapel Hill, NC</p>
+          <p>
+            <i class="fa-solid fa-envelope" id="c-icon"></i>
+            <span class="c-header-text">Email:</span>
+            <a href="mailto:joshjrob@unc.edu" class="email-link" target="_blank">joshjrob@unc.edu</a>
+          </p>
+          <p><i class="fa-solid fa-phone" id="c-icon"></i> <span class="c-header-text">Phone:</span> 910‑442‑7289</p>
+        </div>
+        <div class="contact-rightdiv">
+          <div class="cdiv-topright">
+            <div class="map-titlediv">
+              <h3><i class="fa-solid fa-map-location"></i> Location</h3>
+              <label class="switch">
+                <input type="checkbox" id="toggle-map-mode" />
+                <span class="slider"></span>
+              </label>
+            </div>
+            <iframe id="googlemap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10746.844677925506!2d-79.05284622215449!3d35.90837345098078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89acc2d2cb17aaeb%3A0xb33bf0976497e0e0!2sUniversity%20of%20North%20Carolina%20at%20Chapel%20Hill!5e0!3m2!1sen!2sus!4v1720039200959!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <script src="js/maptoggle.js"></script>
+          </div>
+          <div class="cdiv-bottomright">
+            <section class="contactform-content">
+              <!-- Insert a contact form or additional contact info here if desired -->
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
