@@ -7,6 +7,14 @@
   <link rel="icon" type="image/x-icon" href="images/JR.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="css/styles.css" />
+  <!-- EmailJS for contact form functionality -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function() {
+      // Initialize EmailJS with your user ID
+      emailjs.init("YOUR_USER_ID");
+    })();
+  </script>
 </head>
 <body>
   <!-- Navigation Bar -->
@@ -18,11 +26,10 @@
       <span class="bar"></span>
     </div>
     <ul id="item" class="navbar__menu">
-      <li class="navbar__item"><a href="#homelink" class="navbar__links">Home</a></li>
-      <li class="navbar__item"><a href="#aboutlink" class="navbar__links">About</a></li>
-      <li class="navbar__item"><a href="#experiencelink" class="navbar__links">Experience</a></li>
-      <li class="navbar__item"><a href="#projectslink" class="navbar__links">Projects</a></li>
-      <li class="navbar__item"><a href="#contactlink" class="navbar__links">Contact</a></li>
+      <li class="navbar__item"><a href="#aboutlink">About</a></li>
+      <li class="navbar__item"><a href="#experiencelink">Experience</a></li>
+      <li class="navbar__item"><a href="#projectslink">Projects</a></li>
+      <li class="navbar__item"><a href="#contactlink">Contact</a></li>
       <li class="navbar__item">
         <a href="./Josh_Robertson_Resume (3).pdf" target="_blank" class="navbar__links">
           <i class="fa-solid fa-file-pdf"></i>
@@ -30,6 +37,7 @@
       </li>
     </ul>
   </div>
+  
   <script src="js/menu.js"></script>
   <script src="js/rotatingWords.js"></script>
   <script src="js/maptoggle.js"></script>
@@ -38,214 +46,229 @@
   <script src="js/projectHover.js"></script>
 
   <!-- Home Section -->
-  <div>
-    <p id="homelink" class="emptyDivHome"></p>
-  </div>
-  <div class="back" style="background-image: url('assets/img/back.jpg'); background-size: cover; background-position: center; height: 100vh; width: 100%; position: relative;">
-    <div class="overlay"></div>
-  </div>
-  <div class="content">
+  <div class="back">
     <div class="mid">
-      <h1 id="home">Josh Robertson</h1>
-      <div class="outer-headings">
-        <div class="words">
-          <p class="static">I'm a&nbsp;&nbsp;&nbsp;</p> 
-          <span>
-            Developer<br>
-            Engineer<br>
-            Innovator<br>
-          </span>
+      <div class="name-container">
+        <div class="name-background"></div>
+        <h1>Josh Robertson</h1>
+      </div>
+      <div class="words">
+        <p class="static">University of North Carolina 2027</p>
+      </div>
+      <div class="social-links">
+        <a href="https://github.com/joshrobertson8" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a href="https://linkedin.com/in/josh-robertson-66b370330" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Screen flash overlay for splash effect -->
+  <div class="screen-flash"></div>
+  
+  <!-- Search shortcut hint -->
+  <div class="search-shortcut">
+    <span>Use</span>
+    <span class="key">Ctrl</span>
+    <span>+</span>
+    <span class="key">K</span>
+    <span>to trigger search</span>
+    <button class="close-hint"><i class="fas fa-times"></i></button>
+  </div>
+
+  <!-- Rest of the page content remains the same -->
+  <div>
+    <p id="aboutlink" class="emptyDiv"></p>
+  </div>
+  <section class="About-Section" id="about-section">    
+    <!-- Section title -->
+    <div class="section-titles fade-element">
+      <h1>About</h1>
+    </div>
+    
+    <!-- Introduction -->
+    <div class="intro-container fade-element">
+      <p>I'm Josh Robertson, a frontend developer and UX enthusiast with a degree in Computer Science from UNC Chapel Hill. My passion lies in creating immersive digital experiences that seamlessly blend form and function.</p>
+    </div>
+    
+    <!-- Main content container -->
+    <div class="aboutcontainer">
+      <!-- Headshot image -->
+      <div class="pic from-left">
+        <img src="assets/img/headshot.jpg" alt="Josh Robertson" id="headshot">
+      </div>
+      
+      <!-- Description and skills -->
+      <div class="description from-right">
+        <h3>My Journey</h3>
+        <p>I'm a computer science and mathematics student at UNC-Chapel Hill with a passion for software engineering. Through internships and experiences, I desire to push the frontier of technology and solve complex, impactful problems. My pursuit of knowledge and passion for software and artificial intelligence has crafted me into who I am today and the legacy I want to lead.</p>
+        
+        <p id="end">Let's build something amazing together.</p>
+      </div>
+    </div>
+  </section>
+
+  <div>
+    <p id="experiencelink" class="emptyDiv"></p>
+  </div>
+  <section class="Experience-Section">    
+    <div class="experience-header fade-element">
+      <h1>Experience</h1>
+    </div>
+    
+    <div class="content-wrapper">
+      <!-- Technical Skills Section -->
+      <div class="left-section from-left">
+        <h3 class="expsection-title fade-element">Technical Skills</h3>
+        <div class="skills-list">
+          <div class="skill-box stagger-item">
+            <i class="fa-solid fa-code"></i>
+            <strong>Frontend</strong>
+            <ul>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+            </ul>
+          </div>
+          <div class="skill-box stagger-item">
+            <i class="fa-solid fa-server"></i>
+            <strong>Backend</strong>
+            <ul>
+              <li>Python</li>
+              <li>Java</li>
+              <li>C</li>
+            </ul>
+          </div>
+          <div class="skill-box stagger-item">
+            <i class="fa-solid fa-database"></i>
+            <strong>Databases</strong>
+            <ul>
+              <li>SQL</li>
+              <li>MongoDB</li>
+              <li>Firebase</li>
+            </ul>
+          </div>
         </div>
       </div>
-      <a href="https://github.com/joshrobertson8" target="_blank"><i class="fa-brands fa-github"></i></a>
-      <a href="https://linkedin.com/in/josh-robertson-66b370330" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-    </div>
 
-    <!-- About Section -->
-    <div>
-      <p id="aboutlink" class="emptyDiv"></p>
-    </div>
-    <section class="About-Section">
-      <div class="section-titles">
-        <h1 id="about">About</h1>
+      <!-- Work Experience Section -->
+      <div class="right-section from-right">
+        <h3 class="expsection-title fade-element">Work Experience</h3>
+        <div class="work-experience">
+          <div class="experience stagger-item">
+            <h4 class="company">Apiture</h4>
+            <h5 class="position">Software Engineering Intern</h5>
+            <p class="year">May 2024 – Aug 2024</p>
+            <ul class="description">
+              <li>Developed and tested RESTful APIs for a cloud‑based digital banking platform.</li>
+              <li>Built and maintained end‑to‑end API test suites using Playwright and TypeScript.</li>
+              <li>Collaborated in senior‑led teams during sprint planning, standups, and code reviews.</li>
+            </ul>
+          </div>
+          <div class="experience stagger-item">
+            <h4 class="company">UNC CS + Social Good</h4>
+            <h5 class="position">Developer</h5>
+            <p class="year">Jan 2025 – Present</p>
+            <ul class="description">
+              <li>Designed and delivered coding workshops and educational materials for underserved communities.</li>
+              <li>Collaborated with fellow students to create engaging lesson plans.</li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class="intro-container">
-        <p id="intro">
-          Hi! My name is Josh Robertson and I am a student at the University of North Carolina at Chapel Hill pursuing a B.S. in Computer Science with a Minor in Pre‑Business and Mathematics.
+    </div>
+  </section>
+
+  <div>
+    <p id="projectslink" class="emptyDiv"></p>
+  </div>
+  <section class="Project-Section">
+    <div class="experience-header fade-element">
+      <h1 id="projects">Projects</h1>
+    </div>
+    <section class="proj-containers">
+      <!-- Cover Letter Generator -->
+      <div class="project-box stagger-item">
+        <h3 class="project-title">Cover Letter Generator</h3>
+        <p class="project-description">
+          Developed a web application that generates personalized cover letters using Google's Generative AI. Features include drag-and-drop resume upload and dynamic job description input.
         </p>
-      </div>
-      <br>
-      <div class="aboutcontainer">
-        <div class="pic">
-          <img id="headshot" src="images/headshot.jpg" alt="Josh Robertson Headshot" />
+        <p class="project-languages"><em>Flask | HTML/CSS | Google Generative AI</em></p>
+        <div class="project-gif">
+          <img src="assets/img/covergen.png" alt="Cover Letter Generator Demo" />
         </div>
-        <div class="description">
-          <p id="body">
-            I have a strong passion for developing innovative software solutions and contributing to impactful technology initiatives. With expertise in Python, Java, C, and JavaScript, I thrive in collaborative environments and enjoy tackling challenging projects.
-          </p>
-          <br>
-          <p id="body">
-            My experiences range from building scalable backend services during my internship at Apiture to developing educational materials with the UNC CS + Social Good Education Team. I love turning ideas into robust applications.
-          </p>
-          <br>
-          <p id="end">
-            Scroll down to learn more about my experience, projects, and how to get in touch.
-          </p>
+        <div class="view-project">
+          <a href="https://github.com/joshrobertson8/Cover-gen" target="_blank" aria-label="View Cover Letter Generator on GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
         </div>
       </div>
-
-      <!-- Club/Team Section (Optional) -->
-      <div class="CLUB-SECTION">
-        <div class="club-container">
-          <a href="https://cssgunc.org/" target="_blank" class="club-box">
-            <img src="assets/img/cssglogo.jpeg" alt="UNC CS + Social Good" class="club-image" />
-            <p class="club-title">UNC CS + Social Good</p>
-            <p class="club-role">Developer</p>
-            <p class="club-description">
-              Creating educational materials and workshops to make computer science accessible to underserved communities.
-            </p>
-            <div class="club-hover">
-              <p>Learn More!</p>
-            </div>
+      <!-- Conversational Translator -->
+      <div class="project-box stagger-item">
+        <h3 class="project-title">Conversational Translator</h3>
+        <p class="project-description">
+          Built a real-time, context-aware translation web application enabling seamless multilingual conversations using Flask and Google Generative AI.
+        </p>
+        <p class="project-languages"><em>Flask | HTML/CSS | Google Generative AI</em></p>
+        <div class="project-gif">
+          <img src="assets/img/port.png" alt="Conversational Translator Demo" />
+        </div>
+        <div class="view-project">
+          <a href="https://github.com/joshrobertson8/port-to-language" target="_blank" aria-label="View Conversational Translator on GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Chess Engine -->
+      <div class="project-box stagger-item">
+        <h3 class="project-title">Chess Engine</h3>
+        <p class="project-description">
+          Created an interactive chess game featuring an AI opponent that uses minimax and alpha‑beta pruning, including game features like automatic queen promotion and comprehensive endgame detection.
+        </p>
+        <p class="project-languages"><em>Python | Pygame</em></p>
+        <div class="project-gif">
+          <img src="assets/img/chess.jpg" alt="Chess Engine Demo" />
+        </div>
+        <div class="view-project">
+          <a href="https://github.com/joshrobertson8/chess-engine" target="_blank" aria-label="View Chess Engine on GitHub">
+            <i class="fa-brands fa-github"></i>
           </a>
         </div>
       </div>
     </section>
+  </section>
 
-    <!-- Experience Section -->
-    <div>
-      <p id="experiencelink" class="emptyDiv"></p>
+  <div>
+    <p id="contactlink" class="emptyDiv"></p>
+  </div>
+  <section class="Contact-Section">
+    <div class="experience-header fade-element">
+      <h1 id="contact">Contact</h1>
     </div>
-    <section class="Experience-Section">
-      <div class="section-titles">
-        <h1 id="experience">Experience</h1>
-      </div>
-      <div class="resume-content">
-        <p>
-          Download a PDF of my Resume <a href="./Josh_Robertson_Resume (3).pdf" target="_blank" id="resume_hand_link">here</a>.
-        </p>
-      </div>
-      <div class="content-wrapper">
-        <!-- Left Column: Technical Skills & Certifications -->
-        <div class="left-section">
-          <div class="Languages">
-            <h3 class="expsection-title">Technical Skills:</h3>
-            <div id="skills-list" class="skills-list">
-              <div class="skill-box">
-                <i class="fa-solid fa-code"></i>
-                <strong>Frontend</strong>
-                <ul>
-                  <li>HTML</li>
-                  <li>CSS</li>
-                  <li>JavaScript</li>
-                </ul>
-              </div>
-              <!-- Repeat similar blocks for Backend and Tools -->
-            </div>
-          </div>
-          <div class="certifications">
-            <h3 class="expsection2-title">Certifications:</h3>
-            <div class="certification-list">
-              <div class="certification-box">
-                <img src="assets/img/HackerRank.png" alt="HackerRank Python" />
-                <p>HackerRank Python (Basic)</p>
-              </div>
-              <!-- Add additional certification cards as needed -->
-            </div>
-          </div>
+    <div class="contact-container">
+      <div class="contact-leftdiv from-left">
+        <div class="contact-left-title">
+          <h2>Get in Touch</h2>
+          <hr>
         </div>
-        <!-- Right Column: Work Experience -->
-        <div class="right-section">
-          <h3 class="expsection-title">Work Experience</h3>
-          <div class="work-experience">
-            <div class="experience">
-              <h4 class="company">Apiture</h4>
-              <h5 class="position">Software Engineering Intern</h5>
-              <p class="year">May 2024 – Aug 2024</p>
-              <ul class="description">
-                <li>Developed and tested RESTful APIs for a cloud‑based digital banking platform.</li>
-                <li>Built and maintained end‑to‑end API test suites using Playwright and TypeScript.</li>
-                <li>Collaborated in senior‑led teams during sprint planning, standups, and code reviews.</li>
-              </ul>
-            </div>
-            <div class="experience">
-              <h4 class="company">UNC CS + Social Good Education Team</h4>
-              <h5 class="position">Developer</h5>
-              <p class="year">Jan 2025 – Present</p>
-              <ul class="description">
-                <li>Designed and delivered coding workshops and educational materials for underserved communities.</li>
-                <li>Collaborated with fellow students to create engaging lesson plans.</li>
-              </ul>
-            </div>
+        <form id="contact-form">
+          <div class="field">
+            <input type="text" class="item" name="name" placeholder="Your Name" required>
+            <div class="error-txt">Name can't be blank</div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <div>
-      <p id="projectslink" class="emptyDiv"></p>
-    </div>
-    <section class="Project-Section">
-      <div class="section-titles">
-        <h1 id="projects">Projects</h1>
-      </div>
-      <section class="proj-containers">
-        <!-- Cover Letter Generator -->
-        <div class="project-box" id="projectbox1">
-          <h3 class="project-title">Cover Letter Generator</h3>
-          <p class="project-description">
-            Developed a web application that generates personalized cover letters using Google’s Generative AI. Features include drag-and-drop resume upload and dynamic job description input.
-          </p>
-          <p class="project-languages"><em>Flask | HTML/CSS | Google Generative AI</em></p>
-          <div class="project-gif">
-            <img src="assets/img/cover_letter_demo.gif" alt="Cover Letter Generator Demo" />
+          <div class="field">
+            <input type="email" class="item" name="email" placeholder="Your Email" required>
+            <div class="error-txt">Email can't be blank</div>
           </div>
-          <div class="view-project">
-            <a href="https://github.com/joshrobertson8/Cover-gen" target="_blank">View Project on Github</a>
+          <div class="field textarea-field">
+            <textarea class="item" name="message" placeholder="Your Message" required></textarea>
+            <div class="error-txt">Message can't be blank</div>
           </div>
-        </div>
-        <!-- Conversational Translator -->
-        <div class="project-box" id="projectbox2">
-          <h3 class="project-title">Conversational Translator</h3>
-          <p class="project-description">
-            Built a real-time, context-aware translation web application enabling seamless multilingual conversations using Flask and Google Generative AI.
-          </p>
-          <p class="project-languages"><em>Flask | HTML/CSS | Google Generative AI</em></p>
-          <div class="project-gif">
-            <img src="assets/img/translator_demo.gif" alt="Conversational Translator Demo" />
-          </div>
-          <div class="view-project">
-            <a href="https://github.com/joshrobertson8/port-to-language" target="_blank">View Project on Github</a>
-          </div>
-        </div>
-        <!-- Chess Engine -->
-        <div class="project-box" id="projectbox3">
-          <h3 class="project-title">Chess Engine</h3>
-          <p class="project-description">
-            Created an interactive chess game featuring an AI opponent that uses minimax and alpha‑beta pruning, including game features like automatic queen promotion and comprehensive endgame detection.
-          </p>
-          <p class="project-languages"><em>Python | Pygame</em></p>
-          <div class="project-gif">
-            <img src="assets/img/chess_engine_demo.gif" alt="Chess Engine Demo" />
-          </div>
-          <div class="view-project">
-            <a href="https://github.com/joshrobertson8/chess-engine" target="_blank">View Project on Github</a>
-          </div>
-        </div>
-      </section>
-    </section>
-
-    <!-- Contact Section -->
-    <div>
-      <p id="contactlink" class="emptyDiv"></p>
-    </div>
-    <section class="Contact-Section">
-      <div class="section-titles">
-        <h1 id="contact">Contact</h1>
-      </div>
-      <div class="contact-container">
-        <div class="contact-leftdiv">
+          <button type="submit">
+            <span>Send Message</span>
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </form>
+        <div class="contact-info">
           <p><i class="fa-solid fa-location-dot" id="c-icon"></i> <span class="c-header-text">Location:</span> Chapel Hill, NC</p>
           <p>
             <i class="fa-solid fa-envelope" id="c-icon"></i>
@@ -254,26 +277,375 @@
           </p>
           <p><i class="fa-solid fa-phone" id="c-icon"></i> <span class="c-header-text">Phone:</span> 910‑442‑7289</p>
         </div>
-        <div class="contact-rightdiv">
-          <div class="cdiv-topright">
-            <div class="map-titlediv">
-              <h3><i class="fa-solid fa-map-location"></i> Location</h3>
-              <label class="switch">
-                <input type="checkbox" id="toggle-map-mode" />
-                <span class="slider"></span>
-              </label>
-            </div>
-            <iframe id="googlemap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10746.844677925506!2d-79.05284622215449!3d35.90837345098078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89acc2d2cb17aaeb%3A0xb33bf0976497e0e0!2sUniversity%20of%20North%20Carolina%20at%20Chapel%20Hill!5e0!3m2!1sen!2sus!4v1720039200959!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            <script src="js/maptoggle.js"></script>
-          </div>
-          <div class="cdiv-bottomright">
-            <section class="contactform-content">
-              <!-- Insert a contact form or additional contact info here if desired -->
-            </section>
-          </div>
-        </div>
       </div>
-    </section>
-  </div>
+      <div class="contact-rightdiv from-right">
+        <div class="map-titlediv">
+          <h3><i class="fa-solid fa-map-location"></i> Location</h3>
+          <label class="switch">
+            <input type="checkbox" id="toggle-map-mode" />
+            <span class="slider"></span>
+          </label>
+        </div>
+        <iframe id="googlemap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10746.844677925506!2d-79.05284622215449!3d35.90837345098078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89acc2d2cb17aaeb%3A0xb33bf0976497e0e0!2sUniversity%20of%20North%20Carolina%20at%20Chapel%20Hill!5e0!3m2!1sen!2sus!4v1720039200959!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <script src="js/maptoggle.js"></script>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-name">Josh Robertson</div>
+      <div class="footer-links">
+        <a href="#aboutlink">About</a>
+        <a href="#experiencelink">Experience</a>
+        <a href="#projectslink">Projects</a>
+        <a href="#contactlink">Contact</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://github.com/joshrobertson8" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a href="https://linkedin.com/in/josh-robertson-66b370330" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+      <div class="copyright">© 2024 Josh Robertson. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+  // Enhanced scroll animation controller
+  document.addEventListener('DOMContentLoaded', function() {
+    // Navbar scroll effect
+    const navbar = document.querySelector('.navbar');
+    const navLinks = document.querySelectorAll('.navbar__item a');
+    const navSections = document.querySelectorAll('section');
+    
+    function updateNavbar() {
+      // Add scrolled class when scrolled down
+      if (window.scrollY > 20) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+      
+      // Update active links based on scroll position
+      let current = '';
+      
+      navSections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        const sectionHeight = section.offsetHeight;
+        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+          current = section.getAttribute('id');
+        }
+      });
+      
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current || 
+            (current && link.getAttribute('href').includes(current))) {
+          link.classList.add('active');
+        }
+      });
+    }
+    
+    window.addEventListener('scroll', updateNavbar);
+    updateNavbar(); // Run once on page load
+    
+    // Apply section transition classes
+    document.querySelectorAll('section').forEach(section => {
+      section.classList.add('section-transition');
+    });
+    
+    // Add classes for staggered element animations
+    const sectionItems = {
+      'about-section': '.intro-container, .aboutcontainer .pic, .aboutcontainer .description',
+      'Experience-Section': '.experience-leftdiv, .experience-rightdiv, .skill-box, .experience-item',
+      'Project-Section': '.project-box',
+      'Contact-Section': '.contact-leftdiv, .contact-rightdiv'
+    };
+    
+    // Apply animation classes to elements
+    Object.keys(sectionItems).forEach(sectionID => {
+      const elements = document.querySelectorAll(`#${sectionID} ${sectionItems[sectionID]}`);
+      elements.forEach(el => {
+        // Add staggered animation class
+        if (!el.classList.contains('stagger-item')) {
+          el.classList.add('fade-element');
+        }
+      });
+    });
+    
+    // Enhanced Intersection Observer
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.15
+    };
+    
+    // Section observer for smooth entrance
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Animate the section
+          entry.target.classList.add('animated');
+          
+          // Find and animate child elements with staggered timing
+          const fadeElements = entry.target.querySelectorAll('.fade-element, .stagger-item, .from-left, .from-right');
+          fadeElements.forEach((el, index) => {
+            setTimeout(() => {
+              el.classList.add('fade-in');
+            }, 100 + (index * 100)); // Stagger animations by 100ms
+          });
+          
+          // Stop observing after animation
+          sectionObserver.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    
+    // Start observing all sections
+    document.querySelectorAll('section').forEach(section => {
+      sectionObserver.observe(section);
+    });
+    
+    // Initialize animation on page load for elements above the fold
+    setTimeout(() => {
+      // Animate hero section elements
+      document.querySelector('.name-container h1').style.opacity = '1';
+      document.querySelector('.name-container h1').style.transform = 'translateY(0)';
+      
+      document.querySelector('.mid .words').style.opacity = '1';
+      document.querySelector('.mid .words').style.transform = 'translateY(0)';
+      
+      if (document.querySelector('.social-links')) {
+        document.querySelector('.social-links').style.opacity = '1';
+        document.querySelector('.social-links').style.transform = 'translateY(0)';
+      }
+      
+      // Ensure navbar is visible
+      document.querySelector('.navbar').style.opacity = '1';
+    }, 300);
+
+    // Add color splash effect that follows mouse position
+    const nameContainer = document.querySelector('.name-container');
+    const screenFlash = document.querySelector('.screen-flash');
+    
+    if (nameContainer) {
+      nameContainer.addEventListener('mousemove', (e) => {
+        const rect = nameContainer.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        
+        nameContainer.style.setProperty('--x', `${x}%`);
+        nameContainer.style.setProperty('--y', `${y}%`);
+      });
+      
+      // Create splash particles and screen flash on hover
+      nameContainer.addEventListener('mouseenter', () => {
+        createSplashParticles();
+        
+        // Activate screen flash
+        screenFlash.classList.add('active');
+        
+        // Remove active class after animation completes
+        setTimeout(() => {
+          screenFlash.classList.remove('active');
+        }, 2500); // Match the CSS animation duration
+      });
+    }
+    
+    // Function to create splash particles
+    function createSplashParticles() {
+      const numberOfParticles = 60; // More particles for a fuller effect
+      
+      // Get navbar height to position particles just below it
+      const navbarHeight = document.querySelector('.navbar').offsetHeight;
+      
+      // Screen width for particle distribution
+      const screenWidth = window.innerWidth;
+      
+      // Initial burst particles
+      for (let i = 0; i < numberOfParticles; i++) {
+        const particle = document.createElement('span');
+        particle.classList.add('splash-particle');
+        
+        // Distribute particles across the width of the screen
+        const horizontalPosition = Math.random() * screenWidth;
+        
+        // Random starting heights slightly above the visible area for staggered entry
+        const verticalOffset = Math.random() * -100;
+        
+        // Random horizontal drift (positive or negative)
+        const horizontalDrift = (Math.random() * 200) - 100;
+        
+        // Calculate fall distance - vary based on screen height
+        const fallDistance = window.innerHeight * (0.3 + Math.random() * 0.6);
+        
+        // Size varies with randomness
+        const size = Math.random() * 6 + 4;
+        
+        // Slower timing for smoother animation
+        const duration = Math.random() * 2 + 3; // 3-5 seconds fall time
+        const delay = Math.random() * 1.5; // Staggered appearance
+        
+        // Set custom properties for animation
+        particle.style.setProperty('--fallDistance', `${fallDistance}px`);
+        particle.style.setProperty('--horizontalDrift', `${horizontalDrift}px`);
+        
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        particle.style.left = `${horizontalPosition}px`;
+        particle.style.top = `${navbarHeight + verticalOffset}px`;
+        
+        // Gold color variations
+        const goldHue = 45 + Math.random() * 10; // Gold is around 45-55 in HSL
+        const goldSat = 80 + Math.random() * 20; // High saturation for gold
+        const goldLight = 50 + Math.random() * 20; // Varied lightness
+        const opacity = Math.random() * 0.3 + 0.7;
+        
+        particle.style.backgroundColor = `hsla(${goldHue}, ${goldSat}%, ${goldLight}%, ${opacity})`;
+        particle.style.animation = `particleFall ${duration}s cubic-bezier(0.4, 0.0, 0.2, 1) ${delay}s forwards`;
+        
+        document.body.appendChild(particle);
+        
+        // Remove particles after animation
+        setTimeout(() => {
+          if (particle.parentNode === document.body) {
+            document.body.removeChild(particle);
+          }
+        }, (duration + delay) * 1000 + 100); // Add a small buffer
+      }
+      
+      // Twinkle particles (sparkles that appear as the particles fall)
+      setTimeout(() => {
+        for (let i = 0; i < 30; i++) {
+          const sparkle = document.createElement('span');
+          sparkle.classList.add('splash-particle');
+          
+          // Distribute sparkles across the screen
+          const x = Math.random() * window.innerWidth;
+          const y = navbarHeight + (Math.random() * window.innerHeight * 0.7);
+          
+          // Smaller size for sparkles
+          const size = Math.random() * 2.5 + 1.5;
+          
+          sparkle.style.width = `${size}px`;
+          sparkle.style.height = `${size}px`;
+          sparkle.style.left = `${x}px`;
+          sparkle.style.top = `${y}px`;
+          sparkle.style.backgroundColor = 'rgba(255, 223, 0, 0.9)';
+          sparkle.style.boxShadow = '0 0 10px 2px rgba(255, 215, 0, 0.8)';
+          
+          // Twinkle animation
+          sparkle.style.animation = 'none';
+          sparkle.style.opacity = '0';
+          
+          document.body.appendChild(sparkle);
+          
+          // Create twinkling effect with varied timing
+          const twinkleDuration = Math.random() * 1 + 0.6; // 0.6-1.6s
+          const twinkleDelay = Math.random() * 1200; // Staggered appearance
+          
+          setTimeout(() => {
+            sparkle.style.opacity = '1';
+            setTimeout(() => {
+              sparkle.style.transition = 'opacity 0.7s ease, transform 1s ease';
+              sparkle.style.opacity = '0';
+              
+              // Add gentle falling effect to sparkles
+              sparkle.style.transform = `translate(${Math.random() * 20 - 10}px, ${Math.random() * 60 + 20}px)`;
+              
+              setTimeout(() => {
+                if (sparkle.parentNode === document.body) {
+                  document.body.removeChild(sparkle);
+                }
+              }, 1000);
+            }, twinkleDuration * 1000);
+          }, twinkleDelay);
+        }
+      }, 500); // Delay the sparkles
+    }
+
+    // Add close functionality for search hint
+    document.querySelector('.close-hint')?.addEventListener('click', function() {
+      document.querySelector('.search-shortcut').style.display = 'none';
+    });
+
+    // Rest of the animation code remains the same
+    document.querySelectorAll('.left-section, .right-section').forEach(section => {
+      section.style.opacity = '1';
+    });
+    
+    document.querySelectorAll('.experience-header, .section-titles, .section-subtitle').forEach(header => {
+      header.classList.add('fade-in');
+    });
+    
+    document.querySelectorAll('.stagger-item').forEach((item, index) => {
+      setTimeout(() => {
+        item.style.opacity = '1';
+        item.style.transform = 'translateY(0)';
+        item.style.visibility = 'visible';
+      }, 150 * (index + 1));
+    });
+
+    document.querySelectorAll('.scale-in').forEach((item, index) => {
+      setTimeout(() => {
+        item.style.opacity = '1';
+        item.style.transform = 'scale(1)';
+      }, 200 * (index + 1));
+    });
+
+    document.querySelectorAll('.slide-left').forEach(item => {
+      item.style.opacity = '1';
+      item.style.transform = 'translateX(0)';
+    });
+
+    document.querySelectorAll('.slide-right').forEach(item => {
+      item.style.opacity = '1';
+      item.style.transform = 'translateX(0)';
+    });
+
+    // Animation for elements based on scroll position
+    const elementsToAnimate = document.querySelectorAll('.project-box, .skill-box, .experience-item, .experience-leftdiv, .experience-rightdiv, .intro-container, .aboutcontainer, .profile-pic, .profile-text, .club-container, .contact-leftdiv, .contact-rightdiv');
+    const sectionTitles = document.querySelectorAll('.section-title, .section-subtitle');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    elementsToAnimate.forEach(element => {
+      observer.observe(element);
+    });
+    
+    sectionTitles.forEach(title => {
+      observer.observe(title);
+    });
+
+    // Set up parallax scroll effect for background elements
+    const bgCircles = document.querySelectorAll('.bg-circle');
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      bgCircles.forEach((circle, index) => {
+        // Move each circle at different speed
+        const speed = 0.1 + (index * 0.05);
+        circle.style.transform = `translateY(${scrollY * speed}px)`;
+      });
+    });
+    
+    // Add special entrance animations for specific elements
+    const projectBoxes = document.querySelectorAll('.project-box');
+    projectBoxes.forEach(box => {
+      observer.observe(box);
+    });
+    
+    // Make sure all sections have their animations triggered
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+      section.style.opacity = '1';
+      section.style.transform = 'translateY(0)';
+    });
+  });
+  </script>
 </body>
 </html>
