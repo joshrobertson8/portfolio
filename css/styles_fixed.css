@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
@@ -13,81 +14,48 @@ html {
  scroll-behavior: smooth;
 }
 
-/* Enhanced color palette variables */
-:root {
-  /* Primary colors */
-  --primary-dark: #0a0e17;
-  --primary-medium: #0f1319;
-  --primary-light: #1a2235;
-  
-  /* Accent colors */
-  --accent-blue: #3a7bd5;
-  --accent-blue-light: #63a4ff;
-  --accent-teal: #00b8a9;
-  --accent-purple: #8e44ad;
-  --accent-gold: #f3ca40;
-  
-  /* Text colors - ENHANCED */
-  --text-white: #f5f7fa;
-  --text-light: #e5e9f0;
-  --text-muted: #a4b5cd;
-  --text-secondary: #8ca0c0;
-  --text-subtle: #6d84a8;
-  --text-accent: #74ddff;
-  --text-accent-alt: #00ceb7;
-  --text-highlight: linear-gradient(90deg, #63a4ff, #00ceb7);
-  
-  /* Gradients */
-  --gradient-blue: linear-gradient(135deg, #3a7bd5, #00d2ff);
-  --gradient-purple: linear-gradient(135deg, #8e44ad, #3a7bd5);
-  --gradient-teal: linear-gradient(135deg, #00b8a9, #3a7bd5);
-  --gradient-gold: linear-gradient(135deg, #f3ca40, #f5576c);
-  --gradient-text: linear-gradient(135deg, #74ddff, #00ceb7);
-  --gradient-silver: linear-gradient(135deg, #fafafa, #c9d6df, #f0f2f5, #a9b4c0, #e5e9f0);
-}
-
 body {
-  background-color: var(--primary-dark);
-  color: var(--text-white);
-  background-image: 
-    linear-gradient(rgba(58, 123, 213, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(58, 123, 213, 0.06) 1px, transparent 1px),
-    radial-gradient(circle at 20% 30%, rgba(58, 123, 213, 0.1) 0%, transparent 40%),
-    radial-gradient(circle at 80% 80%, rgba(0, 184, 169, 0.08) 0%, transparent 40%);
-  background-size: 90px 90px, 90px 90px, 100% 100%, 100% 100%;
-  background-position: center center;
-  background-attachment: fixed;
+ background-color: #0a0e17;
+ color: #e6edf3;
+ background-image: 
+   linear-gradient(rgba(52, 152, 219, 0.03) 1px, transparent 1px),
+   linear-gradient(90deg, rgba(52, 152, 219, 0.03) 1px, transparent 1px),
+   radial-gradient(circle at 20% 30%, rgba(42, 82, 152, 0.1) 0%, transparent 40%),
+   radial-gradient(circle at 80% 80%, rgba(52, 152, 219, 0.08) 0%, transparent 40%);
+ background-size: 90px 90px, 90px 90px, 100% 100%, 100% 100%;
+ background-position: center center;
+ background-attachment: fixed;
  position: relative;
 }
 
 body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
+ content: "";
+ position: fixed;
+ top: 0;
+ left: 0;
  width: 100%;
  height: 100%;
-  background: 
-    radial-gradient(circle at top right, rgba(41, 128, 185, 0.1), transparent 60%),
-    radial-gradient(circle at bottom left, rgba(46, 204, 113, 0.05), transparent 60%);
-  z-index: -1;
+ background: 
+   radial-gradient(circle at top right, rgba(41, 128, 185, 0.1), transparent 60%),
+   radial-gradient(circle at bottom left, rgba(46, 204, 113, 0.05), transparent 60%);
+ z-index: -1;
 }
 
 /* Enhanced Navbar Styling */
 .navbar {
  display: flex;
- justify-content: space-between;
+  justify-content: space-between;
  align-items: center;
- padding: 1rem 2rem;
+  padding: 1rem 2rem;
   position: fixed;
   width: 100%;
- top: 0;
+  top: 0;
   left: 0;
   z-index: 100;
   transition: all 0.5s ease;
-  background: rgba(10, 14, 23, 0.9);
+  background: rgba(13, 17, 23, 0.85);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(58, 123, 213, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -97,7 +65,7 @@ body::before {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
   }
   50% {
-    box-shadow: 0 5px 25px rgba(58, 123, 213, 0.15);
+    box-shadow: 0 5px 25px rgba(52, 152, 219, 0.15);
   }
   100% {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
@@ -106,20 +74,20 @@ body::before {
 
 .navbar.scrolled {
   padding: 0.5rem 2rem;
-  background: rgba(10, 14, 23, 0.95);
+  background: rgba(13, 17, 23, 0.95);
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
   animation: navbarGlow 4s ease-in-out infinite;
 }
 
 .navbar-title {
- color: #fff;
+  color: #fff;
   text-decoration: none;
- font-size: 1.5rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  background: var(--gradient-text);
- -webkit-background-clip: text;
- background-clip: text;
- color: transparent;
+  background: linear-gradient(90deg, #fff, #74d3ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
   position: relative;
   transition: all 0.3s ease;
 }
@@ -131,7 +99,7 @@ body::before {
   bottom: -5px;
   width: 0;
   height: 2px;
-  background: var(--gradient-blue);
+  background: linear-gradient(90deg, #3498db, #74d3ff);
   transition: width 0.3s ease;
 }
 
@@ -153,13 +121,13 @@ body::before {
 }
 
 .navbar__item a {
-  color: var(--text-secondary);
+  color: #e0e0e0;
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
   letter-spacing: 0.5px;
   padding: 0.5rem 0;
- position: relative;
+  position: relative;
   transition: all 0.3s ease;
 }
 
@@ -170,13 +138,13 @@ body::before {
   bottom: 0;
   width: 0;
   height: 2px;
-  background: var(--gradient-blue);
+  background: linear-gradient(90deg, #3498db, #74d3ff);
   transition: width 0.3s cubic-bezier(0.65, 0, 0.35, 1);
   transform-origin: left;
 }
 
 .navbar__item a:hover {
-  color: var(--text-accent);
+  color: #74d3ff;
 }
 
 .navbar__item a:hover::before {
@@ -209,11 +177,11 @@ body::before {
 
 /* Active link indicator */
 .navbar__item a.active {
-  color: var(--text-accent);
+  color: #74d3ff;
 }
 
 .navbar__item a.active::before {
- width: 100%;
+  width: 100%;
 }
 
 .back {
@@ -284,12 +252,12 @@ body::before {
 .name-container::before,
 .name-container::after {
   content: '';
- position: absolute;
- width: 100%;
- height: 100%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
- opacity: 0; 
+  opacity: 0;
   pointer-events: none;
   transition: opacity 0.2s ease;
   background: transparent;
@@ -346,21 +314,21 @@ body::before {
 }
 
 .mid .words {
-  height: auto;
-  color: var(--text-secondary);
-  font-size: 1.5rem;
+ height: auto;
+ color: rgba(163, 179, 188, 0.9);
+ font-size: 1.5rem;
   margin: 0;
  display: flex;
-  line-height: 1.6;
-  margin-bottom: 2rem;
-  max-width: 90%;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+ line-height: 1.6;
+ margin-bottom: 2rem;
+ max-width: 90%;
+ opacity: 0;
+ transform: translateY(30px);
+ transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
 }
 
 .social-links {
-  display: flex;
+ display: flex;
  gap: 1.5rem;
  margin-top: 2rem;
  opacity: 0;
@@ -369,26 +337,26 @@ body::before {
 }
 
 .mid i {
-  color: var(--accent-blue);
+ color: #3498db;
   font-size: 1.5rem;
-  transition: all 0.3s ease;
+ transition: all 0.3s ease;
 }
 
 .mid i:hover {
-  color: var(--accent-teal);
-  transform: translateY(-3px);
+ color: #fff;
+ transform: translateY(-3px);
 }
 
 .search-shortcut {
  position: fixed;
  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
+ left: 50%;
+ transform: translateX(-50%);
  background: rgba(52, 152, 219, 0.1);
  backdrop-filter: blur(10px);
  padding: 0.6rem 1.2rem;
  border-radius: 50px;
-  display: flex;
+ display: flex;
  align-items: center;
  gap: 0.6rem;
  font-size: 0.85rem;
@@ -403,7 +371,7 @@ body::before {
  padding: 0.3rem 0.5rem;
  border-radius: 4px;
  font-size: 0.75rem;
-  font-weight: 500;
+ font-weight: 500;
  color: #fff;
 }
 
@@ -424,27 +392,25 @@ body::before {
  color: #fff;
 }
 
-.theme-toggle {
-  position: fixed;
-  top: 1rem;
-  right: 7rem;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  border: none;
-  color: #a3b3bc;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: background-color 0.2s;
+ position: fixed;
+ top: 1rem;
+ right: 7rem;
+ width: 40px;
+ height: 40px;
+ border-radius: 50%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ background: transparent;
+ border: none;
+ color: #a3b3bc;
+ font-size: 1.2rem;
+ cursor: pointer;
+ transition: background-color 0.2s;
 }
 
-.theme-toggle:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
+ background: rgba(255, 255, 255, 0.1);
+ color: #fff;
 }
 
 .About-Section {
@@ -459,37 +425,17 @@ body::before {
   align-items: center;
 }
 
-/* Global rule to remove section backgrounds */
-.About-Section::before,
-.Experience-Section::before,
-.Project-Section::before,
-.Contact-Section::before,
-.Contact-Section::before,
-.bg-animate,
-.bg-circle {
-  display: none !important;
-}
-
-/* Remove actual section background pseudo-elements */
 .About-Section::before {
-  content: none;
-}
-
-.Experience-Section::before {
-  content: none;
-}
-
-.Project-Section::before {
-  content: none;
-}
-
-.Contact-Section::before {
-  content: none;
-}
-
-/* Remove background gradient animation */
-.Contact-Section::before {
-  animation: none;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(41, 128, 185, 0.15), transparent 60%),
+    radial-gradient(circle at 80% 70%, rgba(46, 204, 113, 0.1), transparent 60%);
+  z-index: 0;
 }
 
 .About-Section .section-titles {
@@ -569,7 +515,7 @@ body::before {
 }
 
 .intro-container p {
-  color: var(--text-light);
+  color: #f0f0f0;
   font-size: 1.3rem;
   line-height: 1.8;
   text-align: center;
@@ -578,19 +524,19 @@ body::before {
 }
 
 .position {
-  color: var(--text-accent-alt);
+  color: #74d3ff;
   font-size: 1.1rem;
   margin-bottom: 0.3rem;
 }
 
 .year {
-  color: var(--text-subtle);
+  color: #7f8c8d;
   font-size: 0.9rem;
   margin-bottom: 1rem;
 }
 
 .description li {
-  color: var(--text-light);
+  color: #cccccc;
   margin-bottom: 0.5rem;
   line-height: 1.5;
 }
@@ -808,7 +754,7 @@ body::before {
   backdrop-filter: blur(10px);
   border-radius: 20px;
   padding: 2.5rem;
-  border: 1px solid rgba(58, 123, 213, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
   transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
@@ -823,7 +769,7 @@ body::before {
   inset: 0;
   border-radius: 20px;
   padding: 2px;
-  background: linear-gradient(45deg, transparent, rgba(0, 184, 169, 0.3), transparent);
+  background: linear-gradient(45deg, transparent, rgba(52, 152, 219, 0.3), transparent);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -837,7 +783,7 @@ body::before {
 
 .project-box:hover {
   transform: translateY(-15px) scale(1.03);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 184, 169, 0.3);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4), 0 0 30px rgba(52, 152, 219, 0.3);
   background: rgba(255, 255, 255, 0.05);
 }
 
@@ -867,46 +813,33 @@ body::before {
 }
 
 .project-title {
-  color: var(--text-white);
  font-size: 1.5rem;
  font-weight: bold;
  margin-bottom: 0.5rem;
 }
 
 .project-description {
-  color: var(--text-light);
  font-size: 1rem;
-  line-height: 1.6;
+ color: #555;
  margin-bottom: 1rem;
 }
 
 .project-languages {
-  color: var(--text-accent-alt);
  font-size: 0.9rem;
-  margin-bottom: 1.5rem;
+ color: #777;
+ margin-bottom: 1rem;
 }
 
 .view-project a {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: var(--text-accent);
-  font-size: 1.8rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+ display: inline-block;
+ text-decoration: none;
+ color: #007bff;
+ font-weight: bold;
+ transition: color 0.3s ease;
 }
 
 .view-project a:hover {
-  transform: translateY(-5px);
-  background: rgba(58, 123, 213, 0.2);
-  color: var(--text-white);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), 0 0 15px rgba(0, 184, 169, 0.4);
-  border-color: rgba(0, 184, 169, 0.4);
+ color: #0056b3;
 }
 
 /*=== CONTACT CONTENT STYLING ===*/
@@ -933,6 +866,8 @@ body::before {
     radial-gradient(circle at 30% 30%, rgba(41, 128, 185, 0.15), transparent 60%),
     radial-gradient(circle at 70% 70%, rgba(46, 204, 113, 0.1), transparent 60%);
   z-index: 0;
+  animation: gradientMove 15s ease infinite;
+  background-size: 200% 200%;
 }
 
 .contact-container {
@@ -953,7 +888,7 @@ body::before {
   backdrop-filter: blur(10px);
   border-radius: 20px;
   padding: 3rem;
-  border: 1px solid rgba(58, 123, 213, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
   transition: all 0.5s ease;
   opacity: 0;
@@ -962,7 +897,7 @@ body::before {
 
 .contact-leftdiv:hover {
   transform: translateY(-10px);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 184, 169, 0.2);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4), 0 0 30px rgba(52, 152, 219, 0.2);
   background: rgba(255, 255, 255, 0.05);
 }
 
@@ -972,7 +907,7 @@ body::before {
   backdrop-filter: blur(10px);
   border-radius: 20px;
   padding: 3rem;
-  border: 1px solid rgba(58, 123, 213, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
   transition: all 0.5s ease;
   opacity: 0;
@@ -981,20 +916,20 @@ body::before {
 
 .contact-rightdiv:hover {
   transform: translateY(-10px);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 184, 169, 0.2);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4), 0 0 30px rgba(52, 152, 219, 0.2);
   background: rgba(255, 255, 255, 0.05);
 }
 
 .contact-leftdiv p {
   margin-bottom: 2rem;
   font-size: 1.2rem;
-  color: var(--text-light);
+  color: #e0e0e0;
  display: flex;
   align-items: center;
 }
 
 .contact-leftdiv #c-icon {
-  color: var(--text-accent);
+  color: #74d3ff;
   font-size: 1.5rem;
   margin-right: 1rem;
   width: 25px;
@@ -1002,18 +937,18 @@ body::before {
 
 .c-header-text {
   font-weight: 600;
-  color: var(--text-white);
+  color: #ffffff;
   margin-right: 0.5rem;
 }
 
 .email-link {
-  color: var(--text-accent);
+  color: #74d3ff;
  text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .email-link:hover {
-  color: var(--text-accent-alt);
+  color: #ffffff;
  text-decoration: underline;
 }
 
@@ -1047,7 +982,7 @@ body::before {
 
 .contact-rightdiv:hover #googlemap {
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-  border-color: rgba(0, 184, 169, 0.3);
+  border-color: rgba(52, 152, 219, 0.3);
 }
 
 /* Switch styling */
@@ -1135,7 +1070,7 @@ footer::before {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  background: var(--gradient-text);
+  background: linear-gradient(90deg, #74d3ff, #3498db);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -1161,7 +1096,7 @@ footer::before {
 .copyright {
   font-size: 0.9rem;
   margin-top: 1rem;
-  color: var(--text-subtle);
+  color: rgba(240, 240, 240, 0.6);
 }
 
 .footer-social {
@@ -1332,6 +1267,19 @@ footer::before {
   align-items: center;
 }
 
+.Experience-Section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(41, 128, 185, 0.15), transparent 60%),
+    radial-gradient(circle at 80% 70%, rgba(46, 204, 113, 0.1), transparent 60%);
+  z-index: 0;
+}
+
 .experience-header {
   position: relative;
   text-align: center;
@@ -1384,11 +1332,11 @@ footer::before {
 .right-section {
   flex: 1;
   max-width: 600px;
-  background: rgba(26, 34, 53, 0.4);
+  background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(10px);
   border-radius: 20px;
   padding: 3rem;
-  border: 1px solid rgba(58, 123, 213, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
   position: relative;
   z-index: 2;
@@ -1399,18 +1347,17 @@ footer::before {
 .left-section:hover,
 .right-section:hover {
   transform: translateY(-10px);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 184, 169, 0.2);
-  background: rgba(26, 34, 53, 0.5);
-  border-color: rgba(0, 184, 169, 0.3);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4), 0 0 30px rgba(52, 152, 219, 0.2);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 /* Skill box styling */
 .skill-box {
-  background: rgba(26, 34, 53, 0.4);
+  background: rgba(255, 255, 255, 0.03);
   border-radius: 16px;
   padding: 2rem;
   margin-bottom: 2rem;
-  border: 1px solid rgba(58, 123, 213, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   transition: all 0.5s ease;
   position: relative;
@@ -1422,9 +1369,8 @@ footer::before {
 
 .skill-box:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 184, 169, 0.2);
-  background: rgba(26, 34, 53, 0.5);
-  border-color: rgba(0, 184, 169, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .skill-box i {
@@ -1454,45 +1400,24 @@ footer::before {
 
 /* Experience items styling */
 .experience {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255,255,255,0.03);
   border-radius: 16px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255,255,255,0.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  transition: all 0.5s ease;
   position: relative;
   overflow: hidden;
+  z-index: 3;
+  opacity: 0;
+  transform: translateY(20px);
 }
 
 .experience:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(52, 152, 219, 0.2);
-  border-color: rgba(116, 211, 255, 0.2);
-}
-
-.experience .company {
-  color: var(--text-white);
-  font-size: 1.4rem;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-}
-
-.experience .position {
-  color: var(--text-accent-alt);
-  font-size: 1.1rem;
-  margin-bottom: 0.3rem;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-}
-
-.experience .year {
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
-  font-style: italic;
-  letter-spacing: 0.02em;
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  background: rgba(255,255,255,0.05);
 }
 
 .certification-box {
@@ -1546,10 +1471,8 @@ footer::before {
 
 .stagger-item {
   opacity: 0;
-  transform: translateY(25px);
-  transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  will-change: opacity, transform;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .scale-in {
@@ -1960,7 +1883,7 @@ footer::before {
   border: 1px solid rgba(255, 255, 255, 0.05);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   transition: all 0.5s ease;
-  color: var(--text-light);
+  color: #e0e0e0;
 }
 
 .aboutcontainer .description:hover {
@@ -1971,7 +1894,7 @@ footer::before {
 .aboutcontainer .description h3 {
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
-  color: var(--text-accent);
+  color: #74d3ff;
   border-bottom: 2px solid rgba(116, 211, 255, 0.3);
   padding-bottom: 0.5rem;
   display: inline-block;
@@ -1981,13 +1904,12 @@ footer::before {
   margin-bottom: 1.2rem;
   font-size: 1.1rem;
   line-height: 1.7;
-  color: var(--text-light);
 }
 
 .aboutcontainer .description p#end {
   font-size: 1.3rem;
   font-weight: 500;
-  color: var(--text-accent-alt);
+  color: #74d3ff;
   margin-top: 2rem;
 }
 
@@ -2148,7 +2070,6 @@ footer::before {
     gap: 1rem;
   }
   
-  .theme-toggle {
     right: 5rem;
   }
 }
@@ -2266,69 +2187,40 @@ a:hover {
 
 /* Experience section text formatting */
 .expsection-title, .expsection2-title {
-  color: var(--text-white);
+  color: #ffffff !important;
   margin-bottom: 1.5rem;
   font-size: 1.5rem;
-  border-bottom: 2px solid var(--accent-teal);
+  border-bottom: 2px solid #3498db;
   padding-bottom: 0.5rem;
-  display: inline-block;
-  background: var(--gradient-text);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
 }
 
-.experience .company {
-  color: var(--text-white);
-  font-size: 1.4rem;
+.company {
+  color: #ffffff;
+  font-size: 1.3rem;
   margin-bottom: 0.5rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
 }
 
-.experience .position {
-  color: var(--text-accent-alt);
+.position {
+  color: #74d3ff;
   font-size: 1.1rem;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.5rem;
   font-weight: 500;
-  letter-spacing: 0.02em;
 }
 
-.experience .year {
-  color: var(--text-secondary);
+.year {
+  color: #a3b3bc;
   font-size: 0.9rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   font-style: italic;
-  letter-spacing: 0.02em;
 }
 
-.experience .description {
-  list-style-position: outside;
-  margin-left: 1.5rem;
-  color: var(--text-light);
-  opacity: 1;
-  visibility: visible;
+.description {
+  color: #e0e0e0;
+  font-size: 1rem;
 }
 
-.experience .description li {
-  color: var(--text-light);
-  margin-bottom: 0.8rem;
-  line-height: 1.6;
-  opacity: 1;
-  visibility: visible;
-  letter-spacing: 0.01em;
-  position: relative;
-}
-
-.experience .description li::before {
-  content: "";
-  position: absolute;
-  left: -1.2rem;
-  top: 0.65rem;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--accent-teal);
+.description li {
+  margin-bottom: 0.5rem;
 }
 
 /* Project section text formatting */
@@ -2676,579 +2568,15 @@ form button:active {
   }
 }
 
-/* Add back the empty div styles */
 .emptyDiv {
-  width: 100%;
-  height: 4rem;
-  opacity: 0;
+ width: 100%;
+ height: 4rem;
+ opacity: 0;
 }
 
 .emptyDivHome {
-  width: 100%;
-  height: 0rem;
-  opacity: 0;
+ width: 100%;
+ height: 0rem;
+ opacity: 0;
 }
 
-/* Add smooth scrolling to the entire page */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Enhanced fade-in animation */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* Base transition for all sections */
-section {
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-/* Section transition styles */
-.section-transition {
-  opacity: 0;
-  transform: translateY(30px);
-}
-
-.section-transition.animated {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Element fade-in animations */
-.fade-element {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.fade-element.fade-in {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Staggered animation classes */
-.stagger-item {
-  opacity: 0;
-  transform: translateY(25px);
-  transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.stagger-item.fade-in {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.from-left {
-  opacity: 0;
-  transform: translateX(-40px);
-  transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.from-left.fade-in {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.from-right {
-  opacity: 0;
-  transform: translateX(40px);
-  transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.from-right.fade-in {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.experience .description {
-  list-style-position: outside;
-  margin-left: 1.5rem;
-  color: var(--text-light);
-  opacity: 1;
-  visibility: visible;
-}
-
-.experience .description li {
-  color: var(--text-light);
-  margin-bottom: 0.8rem;
-  line-height: 1.5;
-  opacity: 1;
-  visibility: visible;
-}
-
-/* Section transitions with nuanced colors */
-.section-transition {
-  opacity: 0;
-  transform: translateY(30px);
-}
-
-.section-transition.animated {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Section styling with updated colors */
-.About-Section,
-.Experience-Section,
-.Project-Section,
-.Contact-Section {
-  background-color: var(--primary-medium);
-}
-
-/* Section titles with enhanced styling */
-.section-titles h1,
-.experience-header h1 {
-  color: var(--text-white);
-  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-  position: relative;
-}
-
-/* Intro container with nuanced styling */
-.intro-container {
-  background: rgba(26, 34, 53, 0.5);
-  border: 1px solid rgba(58, 123, 213, 0.15);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.intro-container:hover {
-  border-color: rgba(58, 123, 213, 0.3);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(58, 123, 213, 0.2);
-}
-
-.intro-container::before {
-  background: linear-gradient(45deg, transparent, rgba(58, 123, 213, 0.3), transparent);
-}
-
-/* Home section styles */
-.mid h1 {
-  color: var(--text-white);
-}
-
-.name-container::before {
-  background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), 
-               rgba(0, 184, 169, 0.8), 
-               rgba(58, 123, 213, 0.6), 
-               rgba(142, 68, 173, 0.4), 
-               transparent 80%);
-}
-
-.mid .words {
-  color: var(--text-light);
-}
-
-.mid i {
-  color: var(--accent-blue-light);
-}
-
-.mid i:hover {
-  color: var(--accent-teal);
-}
-
-/* Splash particle effects */
-.splash-particle {
-  box-shadow: 0 0 10px 3px rgba(243, 202, 64, 0.6);
-  background: radial-gradient(circle at center, rgba(243, 202, 64, 0.9), rgba(245, 87, 108, 0.7));
-}
-
-/* Footer with improved styling */
-footer {
-  background-color: rgba(10, 14, 23, 0.95);
-}
-
-footer::before {
-  background: radial-gradient(circle at center, rgba(58, 123, 213, 0.1), transparent 60%);
-}
-
-/* Form button with improved styling */
-form button {
-  background: var(--gradient-blue);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-}
-
-form button:hover {
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3), 0 0 20px rgba(58, 123, 213, 0.3);
-}
-
-/* Form success and error messages */
-.form-message.success {
-  background-color: rgba(0, 184, 169, 0.15);
-  color: var(--accent-teal);
-  border: 1px solid rgba(0, 184, 169, 0.3);
-}
-
-.form-message.error {
-  background-color: rgba(245, 87, 108, 0.15);
-  color: #f5576c;
-  border: 1px solid rgba(245, 87, 108, 0.3);
-}
-
-/* Enhanced Section Titles */
-.section-titles h1,
-.experience-header h1 {
-  background: var(--gradient-text);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-  position: relative;
-}
-
-.section-titles h1::after,
-.experience-header h1::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: var(--gradient-blue);
-  transform: translateX(-100%);
-  transition: transform 1.5s ease;
-}
-
-/* Enhanced headings throughout the site */
-h2 {
-  color: var(--text-white);
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-}
-
-h3 {
-  background: var(--gradient-text);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  font-weight: 600;
-}
-
-/* Skill box titles */
-.skill-box strong {
-  background: var(--gradient-text);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  display: inline-block;
-  margin-bottom: 1rem;
-}
-
-/* Project headings */
-.project-title {
-  background: var(--gradient-text);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-/* Contact headings */
-.contact-left-title h2 {
-  background: var(--gradient-text);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  font-weight: 600;
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
-}
-
-/* Enhanced paragraph text with better line height and letter spacing */
-p {
-  color: var(--text-light);
-  line-height: 1.7;
-  letter-spacing: 0.02em;
-}
-
-/* Add subtle text shadow to important elements */
-.company, .c-header-text, .expsection-title, .expsection2-title {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-/* Enhanced subtle link styling */
-a {
-  color: var(--text-accent);
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-a:hover {
-  color: var(--text-accent-alt);
-}
-
-/* Footer enhancements */
-.footer-name {
-  background: var(--gradient-text);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.copyright {
-  color: var(--text-subtle);
-}
-
-/* Style the main section titles with elegant silver gradient */
-.section-titles h1,
-.experience-header h1 {
-  background: var(--gradient-silver);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
-  font-weight: 700;
-  letter-spacing: 1px;
-  position: relative;
-}
-
-.section-titles h1::after,
-.experience-header h1::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: var(--gradient-silver);
-  transform: translateX(-100%);
-  transition: transform 1.5s ease;
-}
-
-/* For the specific section titles we want to style */
-.About-Section .section-titles h1,
-.Experience-Section .experience-header h1,
-.Project-Section .experience-header h1,
-.Contact-Section .experience-header h1 {
-  background: var(--gradient-silver);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  font-family: 'Inter', sans-serif;
-  font-weight: 700;
-  letter-spacing: 2px;
-  font-size: 2.8rem;
-  text-transform: uppercase;
-  position: relative;
-  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
-  transition: all 0.5s ease;
-}
-
-/* Add a subtle shine animation to the section titles */
-@keyframes silverShine {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.About-Section .section-titles h1,
-.Experience-Section .experience-header h1,
-.Project-Section .experience-header h1,
-.Contact-Section .experience-header h1 {
-  background: var(--gradient-silver);
-  background-size: 200% 200%;
-  animation: silverShine 6s ease infinite;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-/* Add elegant line decoration */
-.About-Section .section-titles h1::after,
-.Experience-Section .experience-header h1::after,
-.Project-Section .experience-header h1::after,
-.Contact-Section .experience-header h1::after {
-  content: '';
-  position: absolute;
-  bottom: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 1px;
-  background: var(--gradient-silver);
-  transition: width 0.5s ease;
-}
-
-.About-Section .section-titles:hover h1::after,
-.Experience-Section .experience-header:hover h1::after,
-.Project-Section .experience-header:hover h1::after,
-.Contact-Section .experience-header:hover h1::after {
-  width: 150px;
-}
-
-/* Update the silver gradient to be more elegant */
-:root {
-  /* ... existing code ... */
-  --gradient-silver: linear-gradient(135deg, #fafafa, #c9d6df, #f0f2f5, #a9b4c0, #e5e9f0);
-}
-
-/* Enhance the section titles with decorative elements */
-.About-Section .section-titles,
-.Experience-Section .experience-header,
-.Project-Section .experience-header,
-.Contact-Section .experience-header {
-  position: relative;
-  padding-bottom: 30px;
-  margin-bottom: 50px;
-}
-
-.About-Section .section-titles::before,
-.Experience-Section .experience-header::before,
-.Project-Section .experience-header::before,
-.Contact-Section .experience-header::before {
-  content: "✦";
-  position: absolute;
-  bottom: -5px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 1.5rem;
-  color: rgba(169, 180, 192, 0.7);
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-}
-
-.About-Section .section-titles h1,
-.Experience-Section .experience-header h1,
-.Project-Section .experience-header h1,
-.Contact-Section .experience-header h1 {
-  font-family: 'Inter', sans-serif;
-  font-weight: 300;  /* Lighter weight for elegance */
-  letter-spacing: 4px;
-  font-size: 3rem;
-  text-transform: uppercase;
-  position: relative;
-  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.2), 0 0 2px rgba(255, 255, 255, 0.1);
-  transition: all 0.5s ease;
-  padding: 0 1rem;
-}
-
-/* Add subtle letter spacing animation on hover */
-.About-Section .section-titles:hover h1,
-.Experience-Section .experience-header:hover h1,
-.Project-Section .experience-header:hover h1,
-.Contact-Section .experience-header:hover h1 {
-  letter-spacing: 5px;
-  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3), 0 0 5px rgba(255, 255, 255, 0.2);
-}
-
-/* Add elegant embellishments to section title containers */
-.About-Section .section-titles,
-.Experience-Section .experience-header,
-.Project-Section .experience-header,
-.Contact-Section .experience-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  padding-bottom: 30px;
-  margin-bottom: 50px;
-}
-
-/* Add decorative diamond shapes around the titles */
-.About-Section .section-titles::before,
-.About-Section .section-titles::after,
-.Experience-Section .experience-header::before,
-.Experience-Section .experience-header::after,
-.Project-Section .experience-header::before,
-.Project-Section .experience-header::after,
-.Contact-Section .experience-header::before,
-.Contact-Section .experience-header::after {
-  content: "◆";
-  position: absolute;
-  font-size: 0.8rem;
-  color: rgba(169, 180, 192, 0.5);
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-}
-
-.About-Section .section-titles::before,
-.Experience-Section .experience-header::before,
-.Project-Section .experience-header::before,
-.Contact-Section .experience-header::before {
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-80px);
-}
-
-.About-Section .section-titles::after,
-.Experience-Section .experience-header::after,
-.Project-Section .experience-header::after,
-.Contact-Section .experience-header::after {
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(70px);
-}
-
-/* Add silver shimmer animation */
-@keyframes silverShimmer {
-  0% {
-    background-position: 0% 50%;
-    opacity: 0.8;
-  }
-  50% {
-    background-position: 100% 50%;
-    opacity: 1;
-  }
-  100% {
-    background-position: 0% 50%;
-    opacity: 0.8;
-  }
-}
-
-/* Remove any duplicate title styles and define them once */
-.About-Section .section-titles h1,
-.Experience-Section .experience-header h1,
-.Project-Section .experience-header h1,
-.Contact-Section .experience-header h1 {
-  background: var(--gradient-silver);
-  background-size: 200% 200%;
-  animation: silverShimmer 8s ease infinite;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  font-family: 'Inter', sans-serif;
-  font-weight: 300;
-  letter-spacing: 4px;
-  font-size: 3rem;
-  text-transform: uppercase;
-  position: relative;
-  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.2), 0 0 2px rgba(255, 255, 255, 0.1);
-  transition: all 0.5s ease;
-  padding: 0 1rem;
-}
