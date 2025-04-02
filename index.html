@@ -7,6 +7,11 @@
   <link rel="icon" type="image/x-icon" href="images/JR.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/fireworks.css" />
+  <!-- Preload sound assets -->
+  <link rel="preload" href="assets/sound/whistling.mp3" as="audio">
+  <link rel="preload" href="assets/sound/explosion.mp3" as="audio">
+  <link rel="preload" href="assets/sound/finale.mp3" as="audio">
   <!-- EmailJS for contact form functionality -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script type="text/javascript">
@@ -43,7 +48,9 @@
   <script src="js/maptoggle.js"></script>
   <script src="js/smoothScroll.js"></script>
   <script src="js/contactform.js"></script>
+  <script src="js/textDecrypt.js"></script>
   <script src="js/projectHover.js"></script>
+  <script src="js/fireworks.js"></script>
 
   <!-- Home Section -->
   <div class="back">
@@ -87,7 +94,7 @@
     
     <!-- Introduction -->
     <div class="intro-container fade-element">
-      <p>I'm Josh Robertson, a frontend developer and UX enthusiast with a degree in Computer Science from UNC Chapel Hill. My passion lies in creating immersive digital experiences that seamlessly blend form and function.</p>
+      <p>I'm Josh Robertson, a computer science and mathematics student at UNC-Chapel Hill with a passion for software engineering. Through internships and experiences, I desire to push the frontier of technology and solve complex, impactful problems. My pursuit of knowledge and passion for software and artificial intelligence has crafted me into who I am today and the legacy I want to lead.</p>
     </div>
     
     <!-- Main content container -->
@@ -100,9 +107,9 @@
       <!-- Description and skills -->
       <div class="description from-right">
         <h3>My Journey</h3>
-        <p>I'm a computer science and mathematics student at UNC-Chapel Hill with a passion for software engineering. Through internships and experiences, I desire to push the frontier of technology and solve complex, impactful problems. My pursuit of knowledge and passion for software and artificial intelligence has crafted me into who I am today and the legacy I want to lead.</p>
+        <p>When I was young, I loved math and science—they made sense to me in a way nothing else did. At the same time, I was fascinated by computers and technology, always exploring new gadgets or trying to figure out how things worked. Eventually, I realized I could combine those interests. Programming became the perfect blend of logic, problem-solving, and creativity, and it set me on the path toward software development.</p>
         
-        <p id="end">Let's build something amazing together.</p>
+        <p id="end"></p>
       </div>
     </div>
   </section>
@@ -155,9 +162,16 @@
         <h3 class="expsection-title fade-element">Work Experience</h3>
         <div class="work-experience">
           <div class="experience stagger-item">
-            <h4 class="company">Apiture</h4>
-            <h5 class="position">Software Engineering Intern</h5>
-            <p class="year">May 2024 – Aug 2024</p>
+            <div class="experience-header-container">
+              <div class="company-logo">
+                <img src="assets/img/apiture.jpg" alt="Apiture Logo">
+              </div>
+              <div class="company-info">
+                <h4 class="company">Apiture</h4>
+                <h5 class="position">Software Engineering Intern</h5>
+                <p class="year">May 2024 – Aug 2024</p>
+              </div>
+            </div>
             <ul class="description">
               <li>Developed and tested RESTful APIs for a cloud‑based digital banking platform.</li>
               <li>Built and maintained end‑to‑end API test suites using Playwright and TypeScript.</li>
@@ -165,9 +179,16 @@
             </ul>
           </div>
           <div class="experience stagger-item">
-            <h4 class="company">UNC CS + Social Good</h4>
-            <h5 class="position">Developer</h5>
-            <p class="year">Jan 2025 – Present</p>
+            <div class="experience-header-container">
+              <div class="company-logo">
+                <img src="assets/img/cs+sg.jpg" alt="UNC CS + Social Good Logo">
+              </div>
+              <div class="company-info">
+                <h4 class="company">UNC CS + Social Good</h4>
+                <h5 class="position">Developer</h5>
+                <p class="year">Jan 2025 – Present</p>
+              </div>
+            </div>
             <ul class="description">
               <li>Designed and delivered coding workshops and educational materials for underserved communities.</li>
               <li>Collaborated with fellow students to create engaging lesson plans.</li>
