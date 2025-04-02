@@ -65,8 +65,8 @@ body::before {
   position: fixed;
   top: 0;
   left: 0;
- width: 100%;
- height: 100%;
+  width: 100%;
+  height: 100%;
   background: 
     radial-gradient(circle at top right, rgba(41, 128, 185, 0.1), transparent 60%),
     radial-gradient(circle at bottom left, rgba(46, 204, 113, 0.05), transparent 60%);
@@ -598,32 +598,123 @@ body::before {
 /* Skills list styling */
 .skills-list {
   display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  /* Grid lines effect */
+  background-image: 
+    linear-gradient(rgba(58, 123, 213, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(58, 123, 213, 0.07) 1px, transparent 1px);
+  background-size: 25px 25px;
+  background-position: center center;
+  padding: 1.5rem;
+  border-radius: 8px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 1024px) {
-  .content-wrapper {
-    flex-direction: column;
-    align-items: center;
-  }
+/* Add animated grid background pulse */
+.skills-list::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(0, 184, 169, 0.05) 0%, transparent 70%);
+  z-index: -1;
+  border-radius: 8px;
+  animation: gridPulse 10s infinite alternate ease-in-out;
+}
 
-  .left-section,
-  .right-section {
-    width: 100%;
-    margin-bottom: 2rem;
+@keyframes gridPulse {
+  0% {
+    opacity: 0.5;
+    background-size: 100% 100%;
+  }
+  50% {
+    opacity: 1;
+    background-size: 120% 120%;
+  }
+  100% {
+    opacity: 0.5;
+    background-size: 100% 100%;
   }
 }
 
-/* === Skills Section === */
-.skills-list {
- display: flex;
- gap: 10px;
- flex-wrap: wrap;
- justify-content: space-around;
- width: 100%;
- margin-left: -10px;
+/* Enhanced skill box styling */
+.skill-box {
+  background: rgba(26, 34, 53, 0.4);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(58, 123, 213, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 3;
+  opacity: 0;
+  transform: translateY(20px);
+  /* Grid cell highlight */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Enhance with 3D effect */
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.skill-box::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 2px;
+  background: linear-gradient(45deg, transparent, rgba(0, 184, 169, 0.3), transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.skill-box:hover::before {
+  opacity: 1;
+}
+
+.skill-box:hover {
+  transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 
+              0 0 20px rgba(0, 184, 169, 0.2),
+              0 0 0 1px rgba(0, 184, 169, 0.3);
+  background: rgba(26, 34, 53, 0.5);
+  border-color: rgba(0, 184, 169, 0.3);
+}
+
+.skill-box i {
+  font-size: 2rem;
+  color: #74d3ff;
+  margin-bottom: 1rem;
+}
+
+.skill-box strong {
+  display: block;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.skill-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-box li {
+  font-size: 1rem;
+  color: #e0e0e0;
+  margin-bottom: 0.5rem;
 }
 
 .skill-divider-box {
@@ -791,56 +882,114 @@ body::before {
 }
 
 .proj-containers {
- display: flex;
- flex-wrap: wrap;
-  justify-content: center;
-  gap: 3rem;
-  max-width: 1400px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 3.5rem;
   width: 100%;
+  max-width: 1400px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
+  padding: 2rem;
+  /* Grid lines effect with animation */
+  background-image: 
+    linear-gradient(rgba(58, 123, 213, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(58, 123, 213, 0.05) 1px, transparent 1px);
+  background-size: 30px 30px;
+  animation: gridMove 25s linear infinite;
 }
 
+@keyframes gridMove {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: 30px 30px;
+  }
+}
+
+/* Add visual depth to the project grid */
+.proj-containers::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background: 
+    radial-gradient(circle at 30% 30%, rgba(0, 184, 169, 0.1), transparent 60%), 
+    radial-gradient(circle at 70% 70%, rgba(58, 123, 213, 0.1), transparent 60%);
+  z-index: -1;
+  filter: blur(15px);
+  opacity: 0.6;
+  animation: gradientShift 15s ease-in-out infinite alternate;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+/* Enhanced project box styling */
 .project-box {
-  flex: 0 1 380px;
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(10px);
   border-radius: 20px;
   padding: 2.5rem;
   border: 1px solid rgba(58, 123, 213, 0.15);
-  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+  box-shadow: 
+    0 15px 50px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
   transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
   overflow: hidden;
   opacity: 0;
   transform: translateY(20px);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* 3D effect */
+  transform-style: preserve-3d;
+  perspective: 1000px;
 }
 
-.project-box::before {
-  content: "";
+/* Enhanced glow effect for project boxes */
+.project-box::after {
+  content: '';
   position: absolute;
-  inset: 0;
-  border-radius: 20px;
-  padding: 2px;
-  background: linear-gradient(45deg, transparent, rgba(0, 184, 169, 0.3), transparent);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 184, 169, 0.2) 0%,
+    transparent 50%
+  );
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.8s ease;
+  pointer-events: none;
+  z-index: -1;
 }
 
-.project-box:hover::before {
+.project-box:hover::after {
   opacity: 1;
 }
 
 .project-box:hover {
-  transform: translateY(-15px) scale(1.03);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 184, 169, 0.3);
+  transform: translateY(-15px) scale(1.03) rotateX(5deg);
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.4), 
+    0 0 30px rgba(0, 184, 169, 0.3),
+    0 0 0 1px rgba(0, 184, 169, 0.3);
   background: rgba(255, 255, 255, 0.05);
 }
 
+/* Make the project gif more prominent */
 .project-gif {
   margin: 1.5rem 0;
   border-radius: 12px;
@@ -848,11 +997,37 @@ body::before {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   transition: all 0.5s ease;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  flex-grow: 1;
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-gif::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 2px;
+  background: linear-gradient(45deg, transparent, rgba(0, 184, 169, 0.4), transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.project-box:hover .project-gif::before {
+  opacity: 1;
 }
 
 .project-box:hover .project-gif {
-  transform: scale(1.05);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  transform: scale(1.05) translateZ(20px);
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.4),
+    0 0 15px rgba(0, 184, 169, 0.3);
 }
 
 .project-gif img {
@@ -860,10 +1035,36 @@ body::before {
   height: auto;
   display: block;
   transition: all 0.5s ease;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 .project-box:hover .project-gif img {
   filter: brightness(1.1) contrast(1.1);
+}
+
+/* Responsive adjustments for the enhanced grids */
+@media (max-width: 1024px) {
+  .skills-list {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+  
+  .proj-containers {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .proj-containers {
+    grid-template-columns: 1fr;
+  }
 }
 
 .project-title {
@@ -1378,6 +1579,47 @@ footer::before {
   margin: 0 auto;
   position: relative;
   z-index: 1;
+  padding: 2rem;
+  /* Add grid lines for visual consistency */
+  background-image: 
+    linear-gradient(rgba(58, 123, 213, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(58, 123, 213, 0.07) 1px, transparent 1px);
+  background-size: 25px 25px;
+  background-position: center center;
+  border-radius: 8px;
+  animation: gridMove 20s linear infinite;
+}
+
+/* Add subtle glow to the content wrapper */
+.content-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background: 
+    radial-gradient(circle at 30% 30%, rgba(0, 184, 169, 0.1), transparent 70%), 
+    radial-gradient(circle at 70% 70%, rgba(58, 123, 213, 0.1), transparent 70%);
+  z-index: -1;
+  filter: blur(15px);
+  opacity: 0.6;
+  animation: gradientShift 15s ease-in-out infinite alternate;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .content-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .left-section,
+  .right-section {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
 }
 
 .left-section,
@@ -2634,8 +2876,8 @@ form button:active {
   transform: translateY(-5px);
   background: rgba(52, 152, 219, 0.2);
   color: #ffffff;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), 0 0 15px rgba(52, 152, 219, 0.4);
-  border-color: rgba(116, 211, 255, 0.4);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), 0 0 15px rgba(0, 184, 169, 0.4);
+  border-color: rgba(0, 184, 169, 0.4);
 }
 
 /* Form message styling */
@@ -3251,4 +3493,58 @@ a:hover {
   text-shadow: 0 3px 8px rgba(0, 0, 0, 0.2), 0 0 2px rgba(255, 255, 255, 0.1);
   transition: all 0.5s ease;
   padding: 0 1rem;
+}
+
+/* Additional grid keyframes animation */
+@keyframes gridLines {
+  0% {
+    background-position: 0 0;
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    background-position: 25px 25px;
+    opacity: 0.5;
+  }
+}
+
+/* Add grid shine effect for hover states */
+.left-section:hover, 
+.right-section:hover,
+.skill-box:hover,
+.project-box:hover {
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.03) 0%,
+    rgba(0, 184, 169, 0.05) 25%,
+    rgba(58, 123, 213, 0.05) 50%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+  background-size: 200% 200%;
+  animation: gradientMove 3s ease infinite;
+}
+
+/* Enhanced media queries for better responsive behavior */
+@media (max-width: 576px) {
+  .skills-list {
+    padding: 0.5rem;
+    background-size: 15px 15px;
+  }
+  
+  .proj-containers {
+    padding: 1rem;
+    gap: 1.5rem;
+    background-size: 20px 20px;
+  }
+  
+  .project-box {
+    padding: 1.5rem;
+  }
+  
+  .content-wrapper {
+    padding: 1rem;
+    background-size: 15px 15px;
+  }
 }
