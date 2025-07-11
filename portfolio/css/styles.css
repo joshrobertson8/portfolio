@@ -1,0 +1,12 @@
+/* Exclude fireworks elements from decryption effects */
+.fireworks-btn,
+.fireworks-container,
+.fireworks-tooltip,
+#fireworks-canvas {
+    display: none;
+}
+
+.name-container.decrypting ~ .fireworks-container,
+.words.decrypting ~ .fireworks-container {
+    display: none;
+}
