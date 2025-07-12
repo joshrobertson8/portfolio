@@ -47,6 +47,7 @@ body {
 .nav-container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 1.5rem 2rem;
   max-width: 1400px;
   margin: 0 auto;
@@ -59,7 +60,7 @@ body {
 
 .nav-logo-text {
   font-size: 1.8rem;
-  font-weight: 100;
+  font-weight: 700;
   color: white;
   letter-spacing: 4px;
   transition: all 0.3s ease;
@@ -98,6 +99,7 @@ body {
   border-radius: 50px;
   padding: 0.8rem 2rem;
   margin-left: auto;
+  margin-right: 0;
   transition: all 0.3s ease;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
@@ -675,16 +677,16 @@ section.visible {
   margin-bottom: 0.1rem;
 }
 
-/* Minimalist Black & White Syntax Highlighting */
-.keyword { color: white; font-weight: 600; }
-.variable { color: rgba(255, 255, 255, 0.9); }
-.property { color: rgba(255, 255, 255, 0.8); }
-.string { color: rgba(255, 255, 255, 0.7); }
-.comment { color: rgba(255, 255, 255, 0.5); font-style: italic; }
-.function { color: white; font-weight: 500; }
-.method { color: rgba(255, 255, 255, 0.85); }
-.operator { color: white; }
-.punctuation { color: rgba(255, 255, 255, 0.8); }
+/* Code Editor Syntax Highlighting */
+.keyword { color: #82aaff; font-weight: 600; }
+.variable { color: #c3e88d; }
+.property { color: #c792ea; }
+.string { color: #ffcb6b; }
+.comment { color: rgba(255, 255, 255, 0.6); font-style: italic; }
+.function { color: #89ddff; font-weight: 500; }
+.method { color: #82aaff; }
+.operator { color: #89ddff; }
+.punctuation { color: rgba(255, 255, 255, 0.85); }
 
 .cursor {
   color: #58a6ff;
