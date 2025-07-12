@@ -49,8 +49,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 1.5rem 2rem;
-  max-width: 1400px;
-  margin: 0 auto;
+  width: 100%;
 }
 
 .nav-logo {
@@ -285,6 +284,7 @@ body {
   gap: 0.5rem;
   margin-bottom: 3rem;
   position: relative;
+  transform: translateX(-4px);
 }
 
 .logo-j, .logo-r {
@@ -867,6 +867,7 @@ section.visible {
   
   .hero-logo-text {
     gap: 0.3rem;
+    transform: translateX(-4px);
   }
   
   .hero-logo::before {
@@ -1633,6 +1634,7 @@ section.visible {
 
   .hero-logo-text {
     flex-direction: row;
+    transform: translateX(-4px);
   }
 
   .logo-j, .logo-r {
