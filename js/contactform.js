@@ -1,5 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
   const contactForm = document.getElementById('contact-form');
+  if (!contactForm) {
+    // Exit early if the contact form isn't present
+    return;
+  }
+
   const nameField = contactForm.querySelector('input[name="name"]');
   const emailField = contactForm.querySelector('input[name="email"]');
   const messageField = contactForm.querySelector('textarea[name="message"]');
