@@ -1670,6 +1670,13 @@ section.visible {
   gap: 1.5rem;
 }
 
+.footer-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
+}
+
 .footer-text {
   font-size: 0.85rem;
   color: var(--text-secondary);
@@ -1678,6 +1685,7 @@ section.visible {
 
 .footer .social-link {
   color: var(--text-secondary);
+  display: inline-flex;
 }
 .footer .social-link:hover {
   color: #fff;
