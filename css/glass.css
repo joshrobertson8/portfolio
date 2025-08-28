@@ -1,0 +1,271 @@
+/*
+  Layered glass + liquid accents
+  - Keeps monotone graphite base with subtle blue/lilac accents
+  - Adds frosted glass depth, glossy highlights, ambient orbs, and tasteful noise
+*/
+
+:root {
+  --graphite-900: #0b0e13;
+  --graphite-800: #0f141c;
+  --graphite-700: #161c26;
+  --ink: rgba(255, 255, 255, 0.06);
+  --ink-2: rgba(255, 255, 255, 0.1);
+  --frost: rgba(255, 255, 255, 0.08);
+  --frost-2: rgba(255, 255, 255, 0.12);
+  --frost-3: rgba(255, 255, 255, 0.18);
+  --stroke-1: rgba(255, 255, 255, 0.18);
+  --stroke-2: rgba(255, 255, 255, 0.28);
+  --shadow-xl: 0 30px 60px rgba(0,0,0,0.45), inset 0 1px rgba(255,255,255,0.04);
+  --shadow-lg: 0 20px 40px rgba(0,0,0,0.35), inset 0 1px rgba(255,255,255,0.04);
+  --accent-a: rgba(122, 162, 255, 0.85);
+  --accent-b: rgba(155, 140, 255, 0.85);
+  --accent-soft-a: rgba(122, 162, 255, 0.25);
+  --accent-soft-b: rgba(155, 140, 255, 0.25);
+}
+
+/* Ambient graphite background with liquid orbs + soft noise */
+body {
+  background:
+    radial-gradient(1200px 600px at 12% -10%, rgba(122,162,255,0.10), transparent 60%),
+    radial-gradient(900px 520px at 110% -10%, rgba(155,140,255,0.08), transparent 65%),
+    linear-gradient(180deg, var(--graphite-900) 0%, var(--graphite-800) 45%, var(--graphite-700) 100%) !important;
+  position: relative;
+}
+
+/* Fine noise for material feel */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.07;
+  mix-blend-mode: soft-light;
+  background-image: url("data:image/svg+xml;utf8,\
+  <svg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'>\
+    <filter id='n'>\
+      <feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/>\
+      <feColorMatrix type='saturate' values='0'/>\
+    </filter>\
+    <rect width='100%' height='100%' filter='url(%23n)' opacity='0.6'/>\
+  </svg>");
+  z-index: -1;
+}
+
+/* Liquid ambient orbs */
+.hero::before {
+  background:
+    radial-gradient(420px 320px at 18% 22%, rgba(128,165,255,0.20), transparent 60%),
+    radial-gradient(520px 420px at 82% 20%, rgba(172,155,255,0.18), transparent 65%),
+    linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.55));
+}
+
+.hero::after {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 120px 120px;
+  opacity: 0.7;
+}
+
+/* Glass surface system: unify cards/buttons/inputs */
+:is(.code-editor, .skill-category, .project-card, .contact-card, .contact-form-container) {
+  background: linear-gradient( to bottom right, rgba(255,255,255,0.12), rgba(255,255,255,0.06) ) !important;
+  border: 1px solid var(--stroke-1) !important;
+  backdrop-filter: blur(16px) saturate(120%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(120%) !important;
+  box-shadow: var(--shadow-lg) !important;
+  position: relative;
+}
+
+/* Glossy highlight band for glass */
+:is(.code-editor, .skill-category, .project-card, .contact-card, .contact-form-container)::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255,255,255,0.24), transparent 40%);
+  pointer-events: none;
+  mask: linear-gradient(180deg, rgba(0,0,0,0.5), transparent 55%);
+}
+
+/* Subtle inner edge highlight */
+:is(.code-editor, .skill-category, .project-card, .contact-card, .contact-form-container)::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0 1px rgba(255,255,255,0.18), inset 0 -1px rgba(0,0,0,0.25);
+}
+
+/* Navigation: liquid pill + active accent ring */
+.navbar {
+  background: linear-gradient(180deg, rgba(14, 18, 30, 0.75), rgba(14, 18, 30, 0.55)) !important;
+  border-bottom-color: var(--stroke-1) !important;
+}
+
+.nav-menu {
+  background: linear-gradient( to bottom right, var(--frost-2), var(--frost) ) !important;
+  border: 1px solid var(--stroke-1) !important;
+  box-shadow: var(--shadow-lg) !important;
+}
+
+.nav-link.active {
+  background: radial-gradient(120% 120% at 0% 0%, var(--accent-soft-a), transparent 60%),
+              radial-gradient(120% 120% at 100% 100%, var(--accent-soft-b), transparent 60%);
+  box-shadow: 0 10px 28px rgba(122,162,255,0.22), inset 0 1px rgba(255,255,255,0.28) !important;
+  color: #fff !important;
+}
+
+.nav-link:hover {
+  color: #fff !important;
+  text-shadow: none !important;
+}
+
+/* Hero: refine logotype and add subtle glass outline */
+.logo-j, .logo-r {
+  background: linear-gradient(180deg, #ffffff 0%, rgba(255,255,255,0.9) 55%, rgba(170, 185, 255, 0.8) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.hero-logo-text::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Section titles: understated underline glow */
+.section-title {
+  position: relative;
+}
+.section-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -8px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+  opacity: 0.7;
+}
+
+/* Project images: glass edge and enhanced hover */
+.project-image {
+  outline: 1px solid rgba(255,255,255,0.12);
+  outline-offset: -1px;
+}
+.project-card:hover .project-image img {
+  transform: scale(1.06) translateZ(0);
+  filter: grayscale(0%);
+}
+
+/* Inputs: crisp glass fields */
+.form-group input, .form-group textarea {
+  background: linear-gradient(180deg, rgba(255,255,255,0.09), rgba(255,255,255,0.05)) !important;
+  border: 1px solid rgba(255,255,255,0.16) !important;
+  box-shadow: inset 0 1px rgba(255,255,255,0.08);
+  color: #fff !important;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+  outline: none;
+  border-color: var(--stroke-2) !important;
+  box-shadow: 0 0 0 6px rgba(122,162,255,0.10), inset 0 1px rgba(255,255,255,0.1);
+}
+
+/* Button: pill glass with liquid accent */
+.btn-send {
+  background: linear-gradient( to bottom right, rgba(255,255,255,0.18), rgba(255,255,255,0.10) ) !important;
+  border: 1px solid var(--stroke-2) !important;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.35), inset 0 1px rgba(255,255,255,0.25) !important;
+  position: relative;
+  overflow: hidden;
+}
+.btn-send::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(120% 120% at 0% 0%, var(--accent-soft-a), transparent 60%),
+              radial-gradient(120% 120% at 100% 100%, var(--accent-soft-b), transparent 60%);
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+.btn-send:hover::after { opacity: 1; }
+
+/* Social links: glass lift */
+.social-link {
+  background: rgba(255,255,255,0.06) !important;
+  border: 1px solid rgba(255,255,255,0.14) !important;
+}
+.social-link:hover {
+  background: rgba(255,255,255,0.12) !important;
+  border-color: rgba(255,255,255,0.22) !important;
+}
+
+/* Footer polish */
+.footer {
+  background: linear-gradient(180deg, rgba(12,16,24,0.85), rgba(12,16,24,0.6)) !important;
+  border-top: 1px solid var(--stroke-1) !important;
+}
+
+/* Focus states for a11y */
+:focus-visible {
+  outline: 2px solid rgba(122,162,255,0.6);
+  outline-offset: 2px;
+  border-radius: 10px;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+/* Cursor ring micro-interaction */
+.cursor-ring, .cursor-dot {
+  position: fixed;
+  top: 0; left: 0;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  mix-blend-mode: screen;
+}
+.cursor-ring {
+  border: 1px solid rgba(122,162,255,0.5);
+  background: radial-gradient(closest-side, rgba(122,162,255,0.18), rgba(122,162,255,0.05) 60%, transparent 80%);
+  filter: blur(0.2px);
+  transition: width 120ms ease, height 120ms ease, opacity 120ms ease, border-color 120ms ease;
+}
+.cursor-dot {
+  width: 6px; height: 6px;
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 0 12px rgba(122,162,255,0.6);
+}
+.cursor-active .cursor-ring {
+  width: 44px; height: 44px;
+  border-color: rgba(155,140,255,0.6);
+}
+
+/* Hide OS cursor only when enhanced cursor is active */
+html.cursor-enhanced, html.cursor-enhanced body, html.cursor-enhanced a, html.cursor-enhanced button,
+html.cursor-enhanced input, html.cursor-enhanced textarea {
+  cursor: none !important;
+}
+
+/* Restore original hero overlays for stability */
+.hero::before {
+  background: radial-gradient(1200px 800px at 30% 10%, rgba(122, 162, 255, 0.15), transparent 50%),
+              radial-gradient(1200px 800px at 80% 20%, rgba(155, 140, 255, 0.1), transparent 50%),
+              rgba(0, 0, 0, 0.6) !important;
+}
+.hero::after {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px) !important;
+  background-size: 100px 100px !important;
+  opacity: 1 !important;
+}
