@@ -1043,9 +1043,14 @@ section.visible {
 }
 
 .experience-item {
-  border-left: 2px solid rgba(255, 255, 255, 0.3);
+  border-left: 2px solid rgba(255, 255, 255, 0.2);
   padding-left: 2rem;
   position: relative;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  transition: transform 220ms ease, box-shadow 220ms ease, background 220ms ease, border-color 220ms ease;
 }
 
 .experience-item::before {
@@ -1055,9 +1060,35 @@ section.visible {
   top: 0;
   width: 10px;
   height: 10px;
-  background: rgba(255, 255, 255, 0.8);
+  background: linear-gradient(180deg, rgba(122,162,255,0.9), rgba(155,140,255,0.9));
   border-radius: 50%;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 0 0 rgba(122,162,255,0.0);
+  transition: box-shadow 220ms ease, transform 220ms ease;
+}
+
+/* Subtle, polished hover for experience items */
+.experience-item:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.09);
+  border-left-color: rgba(122, 162, 255, 0.45);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.28);
+}
+
+.experience-item:hover::before {
+  box-shadow: 0 0 0 6px rgba(122,162,255,0.18);
+  transform: scale(1.1);
+}
+
+/* Slight emphasis on header and company when hovered */
+.experience-item:hover .experience-header h3 {
+  color: #ffffff;
+  text-shadow: 0 0 14px rgba(122,162,255,0.15);
+}
+.experience-item:hover .company {
+  color: rgba(255, 255, 255, 0.9);
+}
+.experience-item:hover .period {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .experience-header {
