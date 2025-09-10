@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Josh Robertson</title>
+  <link rel="icon" type="image/x-icon" href="images/JR.png" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/glass.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- EmailJS for contact form functionality -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function() {
+      // Initialize EmailJS with your user ID
+      emailjs.init("YOUR_USER_ID");
+    })();
+  </script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="nav-logo-text">{JR}</span>
+      </div>
+      <div class="nav-menu">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+      <button class="mobile-menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <div class="hero-date">Chapel Hill, NC</div>
+      <div class="hero-logo">
+        <div class="hero-logo-text">
+          <span class="logo-j">J</span>
+          <span class="logo-r">R</span>
+        </div>
+        <div class="hero-number">35.9132°N 79.0558°W</div>
+        <div class="hero-name">Software Engineer</div>
+      </div>
+      <div class="scroll-indicator">
+        <div class="scroll-line"></div>
+        <span class="scroll-text">Scroll</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about section-morph">
+    <div class="container section-content">
+      <div class="section-header">
+        <span class="section-number">01</span>
+        <h2 class="section-title text-reveal">About</h2>
+      </div>
+      <div class="about-content">
+        <div class="code-editor">
+          <div class="editor-header">
+            <div class="editor-tabs">
+              <div class="tab active">
+                <i class="fas fa-file-alt"></i>
+                <span>about.md</span>
+              </div>
+            </div>
+            <div class="editor-controls">
+              <div class="control minimize"></div>
+              <div class="control maximize"></div>
+              <div class="control close"></div>
+            </div>
+          </div>
+          <div class="editor-sidebar">
+            <div class="sidebar-header">
+              <i class="fas fa-folder-open"></i>
+              <span>EXPLORER</span>
+            </div>
+            <div class="file-tree">
+              <div class="folder">
+                <i class="fas fa-chevron-down"></i>
+                <i class="fas fa-folder-open"></i>
+                <span>portfolio</span>
+              </div>
+              <div class="file-item">
+                <i class="fas fa-file-alt"></i>
+                <span>about.md</span>
+              </div>
+              <div class="file-item">
+                <i class="fas fa-file-code"></i>
+                <span>experience.js</span>
+              </div>
+              <div class="file-item">
+                <i class="fas fa-file-code"></i>
+                <span>projects.js</span>
+              </div>
+            </div>
+          </div>
+          <div class="editor-main">
+            <div class="line-numbers">
+              <span>1</span>
+              <span>2</span>
+              <span>3</span>
+              <span>4</span>
+              <span>5</span>
+              <span>6</span>
+              <span>7</span>
+              <span>8</span>
+              <span>9</span>
+              <span>10</span>
+            </div>
+            <div class="code-content">          <div class="code-line">
+            <span class="keyword"># Josh Robertson</span>
+          </div>
+          <div class="code-line">
+            <span class="comment">Software Engineer</span>
+          </div>
+          <div class="code-line">
+            
+          </div>
+          <div class="code-line">
+            <span class="function">## Education</span>
+          </div>
+          <div class="code-line">
+            <span class="string">Computer Science + Mathematics</span> <span class="punctuation">@</span> <span class="property">UNC-Chapel Hill</span>
+          </div>
+          <div class="code-line">
+            
+          </div>
+          <div class="code-line">
+            <span class="function">## Focus</span>
+          </div>
+          <div class="code-line">
+            <span class="variable">API Design</span> <span class="punctuation">|</span> <span class="variable">Full-Stack Engineering</span> <span class="punctuation">|</span> <span class="variable">AI</span>
+          </div>
+          <div class="code-line">
+            
+          </div>
+          <div class="code-line">
+            <span class="comment"><strong>Engineering to solve problems, writing it for purpose.</strong></span>
+          </div>
+              <div class="code-line">
+                <span class="cursor">|</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-photo">
+          <div class="photo-container hover-glow">
+            <img src="assets/img/headshot.jpg" alt="Josh Robertson">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="experience section-morph">
+    <div class="container section-content">
+      <div class="section-header">
+        <span class="section-number">02</span>
+        <h2 class="section-title text-reveal">Experience</h2>
+      </div>
+      <div class="experience-grid">
+        <div class="experience-item stagger-item">
+          <div class="experience-header">
+            <h3>Software Engineering Intern</h3>
+            <span class="company">Apiture</span>
+            <span class="period">May 2024 – Aug 2024</span>
+          </div>
+          <ul class="experience-description">
+            <li>Developed and tested RESTful APIs for a cloud‑based digital banking platform.</li>
+            <li>Built and maintained end‑to‑end API test suites using Playwright and TypeScript.</li>
+            <li>Collaborated in senior‑led teams during sprint planning, standups, and code reviews.</li>
+          </ul>
+        </div>
+        <div class="experience-item stagger-item">
+          <div class="experience-header">
+            <h3>Developer</h3>
+            <span class="company">UNC CS + Social Good</span>
+            <span class="period">Jan 2025 – Present</span>
+          </div>
+          <ul class="experience-description">
+            <li>Designed and delivered coding workshops and educational materials for underserved communities.</li>
+            <li>Collaborated with fellow students to create engaging lesson plans.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="skills-section">
+        <div class="skills-header">
+          <h3>Technical Skills</h3>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-category stagger-item hover-tilt floating">
+            <div class="skill-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h4>Frontend</h4>
+            <div class="skills-list">
+              <span class="skill-tag">HTML</span>
+              <span class="skill-tag">CSS</span>
+              <span class="skill-tag">JavaScript</span>
+            </div>
+          </div>
+          <div class="skill-category stagger-item hover-tilt floating">
+            <div class="skill-icon">
+              <i class="fas fa-server"></i>
+            </div>
+            <h4>Backend</h4>
+            <div class="skills-list">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Java</span>
+              <span class="skill-tag">C</span>
+              <span class="skill-tag">TypeScript</span>
+            </div>
+          </div>
+          <div class="skill-category stagger-item hover-tilt floating">
+            <div class="skill-icon">
+              <i class="fas fa-database"></i>
+            </div>
+            <h4>Databases</h4>
+            <div class="skills-list">
+              <span class="skill-tag">Supabase</span>
+              <span class="skill-tag">Firebase</span>
+              <span class="skill-tag">DBeaver</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects section-morph">
+    <div class="container section-content">
+      <div class="section-header">
+        <span class="section-number">03</span>
+        <h2 class="section-title text-reveal">Projects</h2>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card flip-card magnetic">
+          <div class="project-image">
+            <img src="assets/img/covergen.png" alt="Cover Letter Generator Demo">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://github.com/joshrobertson8/Cover-gen" target="_blank" class="project-link">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="https://github.com/joshrobertson8/Cover-gen" target="_blank" class="project-link">
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Cover Letter Generator</h3>
+            <p class="project-description">
+              Developed a web application that generates personalized cover letters using Google's Generative AI. Features include drag-and-drop resume upload and dynamic job description input.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Flask</span>
+              <span class="tech-tag">HTML/CSS</span>
+              <span class="tech-tag">Google AI</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card flip-card magnetic">
+          <div class="project-image">
+            <img src="assets/img/port.png" alt="Conversational Translator Demo">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://github.com/joshrobertson8/port-to-language" target="_blank" class="project-link">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="https://github.com/joshrobertson8/port-to-language" target="_blank" class="project-link">
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Conversational Translator</h3>
+            <p class="project-description">
+              Built a real-time, context-aware translation web application enabling seamless multilingual conversations using Flask and Google Generative AI.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Flask</span>
+              <span class="tech-tag">HTML/CSS</span>
+              <span class="tech-tag">Google AI</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card flip-card magnetic">
+          <div class="project-image">
+            <img src="assets/img/chess.jpg" alt="Chess Engine Demo">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://github.com/joshrobertson8/chess-engine" target="_blank" class="project-link">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="https://github.com/joshrobertson8/chess-engine" target="_blank" class="project-link">
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Chess Engine</h3>
+            <p class="project-description">
+              Created an interactive chess game featuring an AI opponent that uses minimax and alpha‑beta pruning, including game features like automatic queen promotion and comprehensive endgame detection.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Pygame</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card flip-card magnetic">
+          <div class="project-image">
+            <img src="assets/img/APSky.png" alt="APSky Weather App Demo">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://github.com/joshrobertson8/apsky" target="_blank" class="project-link">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="https://github.com/joshrobertson8/apsky" target="_blank" class="project-link">
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>APSky</h3>
+            <p class="project-description">
+              Full‑stack weather application with city search, current weather display, 5‑day forecasts, and dynamic themes. Features responsive UI, demo cities, and real‑time metrics including temperature, humidity, and wind speed.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">Express</span>
+              <span class="tech-tag">OpenWeatherMap API</span>
+              <span class="tech-tag">Vanilla JS</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card flip-card magnetic">
+          <div class="project-image">
+            <img src="assets/img/projects.jpg" alt="ReadmeRanker CLI Tool Demo">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://github.com/joshrobertson8/readmeranker" target="_blank" class="project-link">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="https://github.com/joshrobertson8/readmeranker" target="_blank" class="project-link">
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>ReadmeRanker</h3>
+            <p class="project-description">
+              CLI tool that analyzes README.md files and provides quality scores with actionable improvement suggestions. Features local and remote GitHub analysis, AI‑powered recommendations, and configurable scoring weights.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">TypeScript</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">Commander</span>
+              <span class="tech-tag">Gemini AI</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card flip-card magnetic">
+          <div class="project-image">
+            <img src="assets/img/background.jpg" alt="GptossUI Chat Interface Demo">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="https://github.com/joshrobertson8/gptossui" target="_blank" class="project-link">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="https://github.com/joshrobertson8/gptossui" target="_blank" class="project-link">
+                  <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>GptossUI</h3>
+            <p class="project-description">
+              Modern chat interface for local Ollama AI models with real‑time streaming responses. Full‑stack TypeScript application featuring chat history, responsive design, and privacy‑focused local AI inference.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">TypeScript</span>
+              <span class="tech-tag">Express.js</span>
+              <span class="tech-tag">Ollama</span>
+              <span class="tech-tag">Tailwind CSS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact section-morph">
+    <div class="container section-content">
+      <div class="section-header">
+        <span class="section-number">04</span>
+        <h2 class="section-title text-reveal">Contact</h2>
+      </div>
+      <div class="contact-content">
+        <div class="contact-intro">
+          <h3>Let's Connect</h3>
+        </div>
+        
+        <div class="contact-grid">
+          <div class="contact-form-container hover-glow">
+            <div class="form-header">
+              <i class="fas fa-paper-plane"></i>
+              <h4>Send a Message</h4>
+            </div>
+            <form id="contact-form" class="contact-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <input type="text" id="name" name="name" placeholder="Your Name" required>
+                  <label for="name">Name</label>
+                </div>
+                <div class="form-group">
+                  <input type="email" id="email" name="email" placeholder="Your Email" required>
+                  <label for="email">Email</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                <label for="subject">Subject</label>
+              </div>
+              <div class="form-group">
+                <textarea id="message" name="message" placeholder="Your message..." rows="6" required></textarea>
+                <label for="message">Message</label>
+              </div>
+              <button type="submit" class="btn-send magnetic">
+                <span>Send Message</span>
+                <i class="fas fa-arrow-right"></i>
+              </button>
+            </form>
+          </div>
+
+          <div class="contact-info-container">
+            <div class="contact-card stagger-item hover-scale">
+              <div class="card-header">
+                <i class="fas fa-envelope"></i>
+                <h4>Email</h4>
+              </div>
+              <p>joshjrob@unc.edu</p>
+              <a href="mailto:joshjrob@unc.edu" class="contact-link">
+                Send Email <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+
+            <div class="contact-card stagger-item hover-scale">
+              <div class="card-header">
+                <i class="fas fa-phone"></i>
+                <h4>Phone</h4>
+              </div>
+              <p>910‑442‑7289</p>
+              <a href="tel:910-442-7289" class="contact-link">
+                Call Now <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+
+            <div class="contact-card stagger-item hover-scale">
+              <div class="card-header">
+                <i class="fas fa-map-marker-alt"></i>
+                <h4>Location</h4>
+              </div>
+              <p>Chapel Hill, NC</p>
+              <span class="location-note">Available to relocate</span>
+            </div>
+
+            <div class="social-container">
+              <h4>Follow Me</h4>
+              <div class="social-links">
+                <a href="https://github.com/joshrobertson8" target="_blank" class="social-link magnetic">
+                  <i class="fab fa-github"></i>
+                  <span>GitHub</span>
+                </a>
+                <a href="https://linkedin.com/in/josh-robertson-66b370330" target="_blank" class="social-link magnetic">
+                  <i class="fab fa-linkedin"></i>
+                  <span>LinkedIn</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-text">
+          <p>&copy; 2025 Josh Robertson. All rights reserved.</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://github.com/joshrobertson8" target="_blank" class="social-link">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://linkedin.com/in/josh-robertson-66b370330" target="_blank" class="social-link">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/contactform.js"></script>
+  <script src="js/ui.js"></script>
+  <script>
+    // Enhanced navigation functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const navLinks = document.querySelectorAll('.nav-link');
+      const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+      const navMenu = document.querySelector('.nav-menu');
+      const navbar = document.querySelector('.navbar');
+      
+      // Mobile menu toggle
+      mobileMenuBtn.addEventListener('click', function() {
+        this.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+      });
+      
+      // Smooth scrolling and active state management
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          const targetSection = document.querySelector(targetId);
+          
+          // Remove active class from all links
+          navLinks.forEach(navLink => navLink.classList.remove('active'));
+          // Add active class to clicked link
+          this.classList.add('active');
+          
+          // Close mobile menu
+          mobileMenuBtn.classList.remove('active');
+          navMenu.classList.remove('active');
+          document.body.style.overflow = '';
+          
+          if (targetSection) {
+            targetSection.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+
+      // Navbar scroll effect
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+        
+        // Update active nav link based on scroll position
+        const sections = document.querySelectorAll('section');
+        const scrollPos = window.scrollY + 100;
+        
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          const sectionId = section.getAttribute('id');
+          
+          if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+            navLinks.forEach(link => {
+              link.classList.remove('active');
+              if (link.getAttribute('href') === `#${sectionId}`) {
+                link.classList.add('active');
+              }
+            });
+          }
+        });
+      });
+
+      // Fade in animation for sections
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+
+      // Observe all sections
+      document.querySelectorAll('section').forEach(section => {
+        observer.observe(section);
+      });
+      
+      // Close mobile menu when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!navMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+          mobileMenuBtn.classList.remove('active');
+          navMenu.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
