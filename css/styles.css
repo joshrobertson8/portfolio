@@ -736,7 +736,7 @@ section.visible {
 
 .editor-sidebar {
   background: rgba(0, 0, 0, 0.7);
-  width: 200px;
+  width: 140px;
   float: left;
   padding: 1rem;
   border-right: 1px solid rgba(255, 255, 255, 0.1);
@@ -781,7 +781,7 @@ section.visible {
 
 .editor-main {
   display: flex;
-  margin-left: 200px;
+  margin-left: 140px;
   min-height: 500px;
 }
 
@@ -816,34 +816,34 @@ section.visible {
 
 /* Code Editor Syntax Highlighting */
 .keyword {
-  color: #82aaff;
+  color: #1e40af;
   font-weight: 600;
 }
 .variable {
-  color: #c3e88d;
+  color: #166534;
 }
 .property {
-  color: #c792ea;
+  color: #7c2d12;
 }
 .string {
-  color: #ffcb6b;
+  color: #92400e;
 }
 .comment {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(0, 0, 0, 0.6);
   font-style: italic;
 }
 .function {
-  color: #89ddff;
+  color: #0c4a6e;
   font-weight: 500;
 }
 .method {
-  color: #82aaff;
+  color: #1e40af;
 }
 .operator {
-  color: #89ddff;
+  color: #0c4a6e;
 }
 .punctuation {
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(0, 0, 0, 0.85);
 }
 
 .cursor {
@@ -868,6 +868,13 @@ section.visible {
   display: flex;
   justify-content: center;
   align-items: flex-start;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 600px;
 }
 
 .photo-container {
@@ -923,7 +930,78 @@ section.visible {
   color: #e6edf3;
 }
 
-/* Typing Animation */
+/* About Text Box */
+.about-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.about-textbox {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.textbox-container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 600px;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.textbox-container:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.textbox-content {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.7;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
+}
+
+.textbox-content p {
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  text-align: left;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+
+.textbox-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive Text Box */
+@media (max-width: 768px) {
+  .about-sidebar {
+    gap: 1.5rem;
+  }
+
+  .about-textbox {
+    justify-content: center;
+  }
+
+  .textbox-container {
+    padding: 1.2rem;
+    max-width: 100%;
+  }
+
+  .textbox-content p {
+    font-size: 0.9rem;
+    text-align: left;
+    letter-spacing: 0.2px;
+  }
+} /* Typing Animation */
 .code-line {
   opacity: 0;
   animation: typeIn 0.5s ease forwards;
@@ -1011,6 +1089,12 @@ section.visible {
   .photo-container img {
     width: 250px;
     height: 300px;
+  }
+
+  .photo-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 300px;
   }
 }
 
