@@ -1138,7 +1138,7 @@ section.visible {
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
     z-index: 999;
     pointer-events: none; /* do not capture clicks when hidden */
-    visibility: hidden;   /* hide from screen readers/visual flow when hidden */
+    visibility: hidden; /* hide from screen readers/visual flow when hidden */
     will-change: transform;
   }
 
