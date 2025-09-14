@@ -1119,7 +1119,11 @@ section.visible {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(
+      180deg,
+      rgba(13, 18, 40, 0.95) 0%,
+      rgba(13, 18, 40, 0.9) 100%
+    );
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
     flex-direction: column;
@@ -1130,7 +1134,8 @@ section.visible {
     transition: transform 0.4s ease;
     border-radius: 0;
     padding: 2rem;
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
+    z-index: 999;
   }
 
   .nav-menu.active {
