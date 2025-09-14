@@ -34,6 +34,10 @@ body {
   overflow-x: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Container */
 .container {
   max-width: 1200px;
@@ -573,6 +577,7 @@ section {
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.8s ease;
+  scroll-margin-top: 80px; /* ensure anchor targets aren't hidden under fixed navbar */
 }
 
 section.visible {
@@ -1119,11 +1124,7 @@ section.visible {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(
-      180deg,
-      rgba(13, 18, 40, 0.95) 0%,
-      rgba(13, 18, 40, 0.9) 100%
-    );
+    background: rgba(13, 18, 40, 1);
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
     flex-direction: column;

@@ -585,29 +585,15 @@
         document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
       });
       
-      // Smooth scrolling and active state management
+      // Smooth anchor navigation and active state management
       navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-          e.preventDefault();
-          const targetId = this.getAttribute('href');
-          const targetSection = document.querySelector(targetId);
-          
-          // Remove active class from all links
-          navLinks.forEach(navLink => navLink.classList.remove('active'));
-          // Add active class to clicked link
-          this.classList.add('active');
-          
-          // Close mobile menu
+          // Let the browser handle the hash navigation for smooth scroll
+          // Close mobile menu immediately for a snappy feel
           mobileMenuBtn.classList.remove('active');
           navMenu.classList.remove('active');
           document.body.style.overflow = '';
-          
-          if (targetSection) {
-            targetSection.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-            });
-          }
+          // Active link highlighting is handled by scroll listener below
         });
       });
 
