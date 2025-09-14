@@ -588,12 +588,33 @@
       // Smooth anchor navigation and active state management
       navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-          // Let the browser handle the hash navigation for smooth scroll
-          // Close mobile menu immediately for a snappy feel
+          const href = this.getAttribute('href');
+          const isHash = href && href.startsWith('#');
+          const targetSection = isHash ? document.querySelector(href) : null;
+
+          // Always close the mobile menu immediately
+          const wasMenuOpen = navMenu.classList.contains('active');
           mobileMenuBtn.classList.remove('active');
           navMenu.classList.remove('active');
           document.body.style.overflow = '';
-          // Active link highlighting is handled by scroll listener below
+
+          // If the fullscreen menu was open (mobile), handle navigation programmatically
+          // to avoid any race between CSS transitions and default anchor behavior.
+          if (wasMenuOpen && isHash && targetSection) {
+            e.preventDefault();
+
+            // Update active link immediately for feedback
+            navLinks.forEach(n => n.classList.remove('active'));
+            this.classList.add('active');
+
+            // Wait a tick to allow the menu close transition to begin, then scroll
+            setTimeout(() => {
+              targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              // Reflect the new location without causing a jump
+              history.replaceState(null, '', href);
+            }, 60);
+          }
+          // Otherwise let the browser handle it (desktop or external links)
         });
       });
 

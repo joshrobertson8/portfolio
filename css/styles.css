@@ -1137,10 +1137,15 @@ section.visible {
     padding: 2rem;
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
     z-index: 999;
+    pointer-events: none; /* do not capture clicks when hidden */
+    visibility: hidden;   /* hide from screen readers/visual flow when hidden */
+    will-change: transform;
   }
 
   .nav-menu.active {
     transform: translateX(0);
+    pointer-events: auto;
+    visibility: visible;
   }
 
   .nav-link {
