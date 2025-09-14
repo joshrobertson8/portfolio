@@ -555,36 +555,99 @@
   <script src="js/contactform.js"></script>
   <script src="js/ui.js"></script>
   <script>
-    // Enhanced navigation functionality
+    // Enhanced navigation functionality with iOS compatibility
     document.addEventListener('DOMContentLoaded', function() {
       const navLinks = document.querySelectorAll('.nav-link');
       const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
       const navMenu = document.querySelector('.nav-menu');
       const navbar = document.querySelector('.navbar');
       
+      // Helper functions for menu management
+      function openMenu() {
+        mobileMenuBtn.classList.add('active');
+        navMenu.classList.add('active');
+        navMenu.setAttribute('aria-hidden', 'false');
+        mobileMenuBtn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+      
+      function closeMenu() {
+        mobileMenuBtn.classList.remove('active');
+        navMenu.classList.remove('active');
+        navMenu.setAttribute('aria-hidden', 'true');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+      
       // Mobile menu toggle
-      mobileMenuBtn.addEventListener('click', function() {
-        this.classList.toggle('active');
-        navMenu.classList.toggle('active');
-        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+      mobileMenuBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        if (navMenu.classList.contains('active')) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
       });
       
-      // Smooth scrolling and active state management
-      navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
+      // Guard against double-firing on iOS
+      let navigationInProgress = false;
+      
+      // Unified navigation handler for all events
+      function handleNavLinkActivate(e, link) {
+        const targetId = link.getAttribute('href');
+        const isMenuOpen = navMenu.classList.contains('active');
+        const isInternalLink = targetId && targetId.startsWith('#');
+        
+        // If menu is open and this is an internal link
+        if (isMenuOpen && isInternalLink) {
           e.preventDefault();
-          const targetId = this.getAttribute('href');
+          e.stopPropagation();
+          
+          // Guard against double activation
+          if (navigationInProgress) return;
+          navigationInProgress = true;
+          
+          // Close the menu immediately
+          closeMenu();
+          
+          // Remove active class from all links
+          navLinks.forEach(navLink => navLink.classList.remove('active'));
+          // Add active class to clicked link
+          link.classList.add('active');
+          
+          // After menu close transition, scroll to section
+          setTimeout(() => {
+            const targetSection = document.querySelector(targetId);
+            if (targetSection) {
+              targetSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+              // Update URL hash
+              history.replaceState(null, null, targetId);
+            }
+            
+            // Release the guard after a short delay
+            setTimeout(() => {
+              navigationInProgress = false;
+            }, 100);
+          }, 60);
+        } else if (!isInternalLink) {
+          // For external links, let default behavior happen
+          if (isMenuOpen) {
+            closeMenu();
+          }
+        } else {
+          // Desktop behavior for internal links
+          e.preventDefault();
           const targetSection = document.querySelector(targetId);
           
           // Remove active class from all links
           navLinks.forEach(navLink => navLink.classList.remove('active'));
           // Add active class to clicked link
-          this.classList.add('active');
-          
-          // Close mobile menu
-          mobileMenuBtn.classList.remove('active');
-          navMenu.classList.remove('active');
-          document.body.style.overflow = '';
+          link.classList.add('active');
           
           if (targetSection) {
             targetSection.scrollIntoView({
@@ -592,6 +655,24 @@
               block: 'start'
             });
           }
+        }
+      }
+      
+      // Bind to multiple events for iOS compatibility
+      navLinks.forEach(link => {
+        // Handle click events
+        link.addEventListener('click', function(e) {
+          handleNavLinkActivate(e, this);
+        });
+        
+        // Handle touch events for iOS
+        link.addEventListener('touchend', function(e) {
+          handleNavLinkActivate(e, this);
+        }, { passive: false });
+        
+        // Handle pointer events as backup
+        link.addEventListener('pointerup', function(e) {
+          handleNavLinkActivate(e, this);
         });
       });
 
@@ -645,11 +726,29 @@
       // Close mobile menu when clicking outside
       document.addEventListener('click', function(e) {
         if (!navMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-          mobileMenuBtn.classList.remove('active');
-          navMenu.classList.remove('active');
-          document.body.style.overflow = '';
+          if (navMenu.classList.contains('active')) {
+            closeMenu();
+          }
         }
       });
+      
+      // Handle escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+          closeMenu();
+        }
+      });
+      
+      // Close menu on window resize
+      window.addEventListener('resize', function() {
+        if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
+          closeMenu();
+        }
+      });
+      
+      // Initialize ARIA attributes
+      navMenu.setAttribute('aria-hidden', 'true');
+      mobileMenuBtn.setAttribute('aria-expanded', 'false');
     });
   </script>
 

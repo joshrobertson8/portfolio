@@ -19,6 +19,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   line-height: 1.6;
@@ -505,6 +509,7 @@ section {
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.8s ease;
+  scroll-margin-top: 80px;
 }
 
 section.visible {
@@ -878,33 +883,167 @@ section.visible {
     display: flex;
   }
   
+  /* Mobile navbar - opaque background */
+  .navbar {
+    background: #0d1228 !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  
+  .navbar.scrolled {
+    background: #0d1228 !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  
   .nav-menu {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
+    /* Opaque background with stunning gradients */
+    background: linear-gradient(135deg, 
+      #0d1228 0%, 
+      rgba(20, 30, 55, 0.98) 25%, 
+      rgba(25, 35, 65, 0.96) 50%, 
+      rgba(15, 25, 45, 0.98) 75%, 
+      #0d1228 100%
+    ) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2rem;
     transform: translateX(-100%);
-    transition: transform 0.4s ease;
+    transition: transform 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
     border-radius: 0;
     padding: 2rem;
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+    box-shadow: none;
+    border: none;
+    /* Ensure menu is non-interactive when closed */
+    pointer-events: none;
+    visibility: hidden;
+    /* Add subtle animated texture */
+    position: relative;
+    overflow: hidden;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* Animated sheen overlay for visual interest */
+  .nav-menu::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      45deg,
+      transparent,
+      rgba(255, 255, 255, 0.03),
+      transparent
+    );
+    animation: shimmerMove 6s ease-in-out infinite;
+    pointer-events: none;
+  }
+  
+  /* Subtle grid texture */
+  .nav-menu::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.01) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.3;
+    pointer-events: none;
+  }
+  
+  @keyframes shimmerMove {
+    0% { transform: translate(-100%, -100%) rotate(45deg); }
+    50% { transform: translate(0%, 0%) rotate(45deg); }
+    100% { transform: translate(100%, 100%) rotate(45deg); }
   }
   
   .nav-menu.active {
     transform: translateX(0);
+    pointer-events: auto;
+    visibility: visible;
   }
   
   .nav-link {
     font-size: 1.2rem;
     padding: 1rem 2rem;
+    background: transparent !important;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    /* Enhanced typography for mobile */
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.85);
+  }
+  
+  /* Subtle lift effect on hover */
+  .nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.08), 
+      rgba(255, 255, 255, 0.02)
+    );
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.3s ease;
+    border-radius: inherit;
+  }
+  
+  .nav-link:hover::before {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  .nav-link:hover {
+    color: #ffffff;
+    transform: translateY(-2px) scale(1.02);
+    text-shadow: 0 0 12px rgba(122, 162, 255, 0.4);
+  }
+  
+  /* Tactile feedback on tap */
+  .nav-link:active {
+    transform: translateY(0) scale(0.98);
+    transition: transform 0.1s ease;
+  }
+  
+  /* Highlight band for active state */
+  .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 2px;
+    background: linear-gradient(90deg, 
+      transparent, 
+      rgba(122, 162, 255, 0.8), 
+      rgba(155, 140, 255, 0.8), 
+      transparent
+    );
+    border-radius: 1px;
   }
   
   .hero-date {
