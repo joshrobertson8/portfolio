@@ -1140,6 +1140,8 @@ section.visible {
     pointer-events: none; /* do not capture clicks when hidden */
     visibility: hidden; /* hide from screen readers/visual flow when hidden */
     will-change: transform;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    touch-action: manipulation; /* hint to reduce delays on taps */
   }
 
   .nav-menu.active {
@@ -1151,6 +1153,8 @@ section.visible {
   .nav-link {
     font-size: 1.2rem;
     padding: 1rem 2rem;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    touch-action: manipulation;
   }
 
   .hero-date {

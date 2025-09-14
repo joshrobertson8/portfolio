@@ -577,45 +577,81 @@
       const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
       const navMenu = document.querySelector('.nav-menu');
       const navbar = document.querySelector('.navbar');
+      let navClosing = false;
       
+      // Helpers to open/close mobile menu with ARIA and guard
+      function openMenu() {
+        mobileMenuBtn.classList.add('active');
+        navMenu.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        mobileMenuBtn.setAttribute('aria-expanded', 'true');
+        navMenu.setAttribute('aria-hidden', 'false');
+      }
+      function closeMenu() {
+        mobileMenuBtn.classList.remove('active');
+        navMenu.classList.remove('active');
+        document.body.style.overflow = '';
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        navMenu.setAttribute('aria-hidden', 'true');
+      }
+
       // Mobile menu toggle
       mobileMenuBtn.addEventListener('click', function() {
-        this.classList.toggle('active');
-        navMenu.classList.toggle('active');
-        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+        if (navMenu.classList.contains('active')) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
       });
       
-      // Smooth anchor navigation and active state management
-      navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-          const href = this.getAttribute('href');
-          const isHash = href && href.startsWith('#');
-          const targetSection = isHash ? document.querySelector(href) : null;
+      // Smooth anchor navigation and active state management (iOS-safe)
+      function handleNavLinkActivate(e, link) {
+        const href = link.getAttribute('href');
+        const isHash = href && href.startsWith('#');
+        const targetSection = isHash ? document.querySelector(href) : null;
 
-          // Always close the mobile menu immediately
-          const wasMenuOpen = navMenu.classList.contains('active');
-          mobileMenuBtn.classList.remove('active');
-          navMenu.classList.remove('active');
-          document.body.style.overflow = '';
+  const wasMenuOpen = navMenu.classList.contains('active');
 
-          // If the fullscreen menu was open (mobile), handle navigation programmatically
-          // to avoid any race between CSS transitions and default anchor behavior.
-          if (wasMenuOpen && isHash && targetSection) {
-            e.preventDefault();
+  // Always close the mobile menu immediately
+  closeMenu();
 
-            // Update active link immediately for feedback
-            navLinks.forEach(n => n.classList.remove('active'));
-            this.classList.add('active');
+        if (wasMenuOpen && isHash && targetSection) {
+          // Prevent default so we control timing; important for iOS Safari
+          if (e) e.preventDefault();
+          // Guard against double fire (touchend + click)
+          if (navClosing) return;
+          navClosing = true;
 
-            // Wait a tick to allow the menu close transition to begin, then scroll
-            setTimeout(() => {
+          // Update active link immediately for feedback
+          navLinks.forEach(n => n.classList.remove('active'));
+          link.classList.add('active');
+
+          // After a short delay, scroll and update hash without jump
+          setTimeout(() => {
+            try {
               targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              // Reflect the new location without causing a jump
               history.replaceState(null, '', href);
-            }, 60);
-          }
-          // Otherwise let the browser handle it (desktop or external links)
-        });
+            } catch {}
+            // Release guard after transition window
+            setTimeout(() => { navClosing = false; }, 300);
+          }, 60);
+        }
+        // For desktop or non-hash links, let the browser do its thing
+      }
+
+      navLinks.forEach(link => {
+        // Click for most browsers
+        link.addEventListener('click', function(e) {
+          handleNavLinkActivate(e, this);
+        }, { passive: false });
+        // Touchend for iOS Safari reliability
+        link.addEventListener('touchend', function(e) {
+          handleNavLinkActivate(e, this);
+        }, { passive: false });
+        // Pointer events for modern Safari/iOS & others
+        link.addEventListener('pointerup', function(e) {
+          handleNavLinkActivate(e, this);
+        }, { passive: false });
       });
 
       // Navbar scroll effect
