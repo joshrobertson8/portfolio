@@ -61,8 +61,10 @@ html {
   border-bottom: 1px solid var(--glass-border);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
   z-index: 1000;
-  transition: all 0.4s ease;
+  transition: background 0.4s ease, border-bottom-color 0.4s ease,
+    backdrop-filter 0.4s ease, box-shadow 0.4s ease;
   padding: 0;
+  will-change: background, border-bottom-color, backdrop-filter, box-shadow;
 }
 
 .navbar.scrolled {
@@ -95,9 +97,10 @@ html {
   font-weight: 700;
   color: white;
   letter-spacing: 4px;
-  transition: all 0.3s ease;
+  transition: letter-spacing 0.3s ease, text-shadow 0.3s ease;
   position: relative;
   cursor: pointer;
+  will-change: letter-spacing, text-shadow;
 }
 
 .nav-logo-text::after {
@@ -137,8 +140,10 @@ html {
   padding: 0.8rem 2rem;
   margin-left: auto;
   margin-right: 0;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  will-change: background, border-color, transform, box-shadow;
 }
 
 .nav-menu:hover {
@@ -155,10 +160,11 @@ html {
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
   position: relative;
   padding: 0.5rem 1rem;
   border-radius: 25px;
+  will-change: color, transform;
 }
 
 .nav-link::before {
@@ -172,8 +178,9 @@ html {
   border-radius: 25px;
   opacity: 0;
   transform: scale(0.8);
-  transition: all 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
   z-index: -1;
+  will-change: opacity, transform;
 }
 
 .nav-link:hover {
@@ -213,8 +220,9 @@ html {
   width: 25px;
   height: 2px;
   background: white;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
   border-radius: 2px;
+  will-change: transform, opacity;
 }
 
 .mobile-menu-btn.active span:nth-child(1) {
@@ -280,14 +288,15 @@ html {
   background-size: 100px 100px;
   animation: gridMove 20s linear infinite;
   z-index: 1;
+  will-change: transform;
 }
 
 @keyframes gridMove {
   0% {
-    transform: translate(0, 0);
+    transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translate(100px, 100px);
+    transform: translate3d(100px, 100px, 0);
   }
 }
 
@@ -304,11 +313,11 @@ html {
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translate3d(0, 40px, 0);
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -357,7 +366,7 @@ html {
   line-height: 0.8;
   font-family: "Inter", sans-serif;
   position: relative;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
   text-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
   background: linear-gradient(
     180deg,
@@ -368,6 +377,7 @@ html {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  will-change: transform;
 }
 
 .logo-j:hover,
@@ -407,10 +417,10 @@ html {
 
 @keyframes rotate {
   0% {
-    transform: translate(-50%, -50%) rotate(0deg);
+    transform: translate3d(-50%, -50%, 0) rotate(0deg);
   }
   100% {
-    transform: translate(-50%, -50%) rotate(360deg);
+    transform: translate3d(-50%, -50%, 0) rotate(360deg);
   }
 }
 
@@ -437,7 +447,8 @@ html {
     rgba(255, 255, 255, 0.7),
     rgba(255, 255, 255, 0)
   );
-  transition: all 0.3s ease;
+  transition: width 0.3s ease, opacity 0.3s ease;
+  will-change: width, opacity;
 }
 
 .hero-number::before {
@@ -488,7 +499,8 @@ html {
 .scroll-indicator:hover {
   opacity: 1;
   transform: translateX(-50%) translateY(-5px);
-  transition: all 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  will-change: opacity, transform;
 }
 
 .scroll-line {
@@ -567,7 +579,8 @@ html {
   text-transform: uppercase;
   writing-mode: horizontal-tb;
   opacity: 0.9;
-  transition: all 0.3s ease;
+  transition: opacity 0.3s ease, color 0.3s ease;
+  will-change: opacity, color;
   color: var(--text-secondary);
 }
 
@@ -576,7 +589,8 @@ section {
   padding: 8rem 0;
   opacity: 0;
   transform: translateY(20px);
-  transition: all 0.8s ease;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  will-change: opacity, transform;
   scroll-margin-top: 80px; /* ensure anchor targets aren't hidden under fixed navbar */
 }
 
@@ -889,7 +903,8 @@ section.visible {
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 15px;
   padding: 1.5rem;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease, border 0.3s ease, transform 0.3s ease;
+  will-change: background, border, transform;
 }
 
 .photo-container:hover {
@@ -956,7 +971,9 @@ section.visible {
   padding: 1.5rem;
   width: 100%;
   max-width: 600px;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease, border 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+  will-change: background, border, transform, box-shadow;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
@@ -1419,7 +1436,8 @@ section.visible {
   border-radius: 15px;
   padding: 2rem;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease, transform 0.3s ease, border 0.3s ease;
+  will-change: background, transform, border;
 }
 
 .skill-category:hover {
@@ -1455,7 +1473,8 @@ section.visible {
   border-radius: 999px;
   font-size: 0.85rem;
   border: 1px solid rgba(255, 255, 255, 0.22);
-  transition: all 0.25s ease;
+  transition: background 0.25s ease, transform 0.25s ease;
+  will-change: background, transform;
 }
 .skill-tag:hover {
   background: rgba(255, 255, 255, 0.2);
@@ -1501,7 +1520,8 @@ section.visible {
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 15px;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease, transform 0.3s ease, border 0.3s ease;
+  will-change: background, transform, border;
   position: relative;
 }
 
@@ -1523,7 +1543,8 @@ section.visible {
   height: 100%;
   object-fit: cover;
   filter: grayscale(100%);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  will-change: transform, filter;
 }
 
 .project-card:hover .project-image img {
@@ -1568,7 +1589,8 @@ section.visible {
   color: white;
   text-decoration: none;
   font-size: 1.2rem;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease, transform 0.3s ease, border 0.3s ease;
+  will-change: background, transform, border;
 }
 
 .project-link:hover {
@@ -2011,11 +2033,11 @@ section.visible {
 @keyframes slideIn {
   from {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translate3d(0, -10px, 0);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -2567,13 +2589,13 @@ section.visible {
 }
 @keyframes floatY {
   0% {
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
   50% {
-    transform: translateY(-8px);
+    transform: translate3d(0, -8px, 0);
   }
   100% {
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -2634,4 +2656,39 @@ section.visible .stagger-item:nth-child(5) {
     rgba(255, 255, 255, 0)
   );
   pointer-events: none;
+}
+
+/* Performance optimizations - Hardware acceleration for animated elements */
+.background-shapes::before,
+.background-shapes::after,
+.hero-content,
+.scroll-indicator,
+.floating-element,
+[class*="float"],
+[class*="animate"] {
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Optimize opacity animations */
+section,
+.fade-in,
+[class*="fade"] {
+  will-change: opacity, transform;
+}
+
+/* GPU acceleration for hover effects */
+.project-card,
+.skill-category,
+.nav-link,
+.magnetic {
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Contain layout for better performance */
+.container,
+.content-wrapper {
+  contain: layout style;
 }
