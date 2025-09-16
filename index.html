@@ -27,14 +27,14 @@
       <div class="nav-logo">
         <span class="nav-logo-text">{JR}</span>
       </div>
-      <div class="nav-menu">
+      <div id="nav-menu" class="nav-menu" aria-hidden="true">
         <a href="#hero" class="nav-link active">Home</a>
         <a href="#about" class="nav-link">About</a>
         <a href="#experience" class="nav-link">Experience</a>
         <a href="#projects" class="nav-link">Projects</a>
         <a href="#contact" class="nav-link">Contact</a>
       </div>
-      <button class="mobile-menu-btn">
+      <button class="mobile-menu-btn" type="button" aria-label="Toggle navigation" aria-controls="nav-menu" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
@@ -564,160 +564,9 @@
     </div>
   </footer>
 
-  <script src="js/ui.js"></script>
-  <script src="js/maptoggle.js"></script>
-  <script>
-    // Enhanced navigation functionality with performance optimizations
-    document.addEventListener('DOMContentLoaded', function() {
-      // Cache DOM elements to avoid repeated queries
-      const navLinks = document.querySelectorAll('.nav-link');
-      const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-      const navMenu = document.querySelector('.nav-menu');
-      const navbar = document.querySelector('.navbar');
-      const sections = document.querySelectorAll('section');
-      const body = document.body;
-      
-      let navClosing = false;
-      let ticking = false; // Throttle scroll events
-      
-      // Helpers to open/close mobile menu with ARIA and guard
-      function openMenu() {
-        mobileMenuBtn.classList.add('active');
-        navMenu.classList.add('active');
-        body.style.overflow = 'hidden';
-        mobileMenuBtn.setAttribute('aria-expanded', 'true');
-        navMenu.setAttribute('aria-hidden', 'false');
-      }
-      
-      function closeMenu() {
-        mobileMenuBtn.classList.remove('active');
-        navMenu.classList.remove('active');
-        body.style.overflow = '';
-        mobileMenuBtn.setAttribute('aria-expanded', 'false');
-        navMenu.setAttribute('aria-hidden', 'true');
-      }
-
-      // Mobile menu toggle
-      mobileMenuBtn.addEventListener('click', function() {
-        if (navMenu.classList.contains('active')) {
-          closeMenu();
-        } else {
-          openMenu();
-        }
-      });
-      
-      // Smooth anchor navigation and active state management (iOS-safe)
-      function handleNavLinkActivate(e, link) {
-        const href = link.getAttribute('href');
-        const isHash = href && href.startsWith('#');
-        const targetSection = isHash ? document.getElementById(href.substring(1)) : null;
-
-        const wasMenuOpen = navMenu.classList.contains('active');
-
-        // Always close the mobile menu immediately
-        closeMenu();
-
-        if (wasMenuOpen && isHash && targetSection) {
-          // Prevent default so we control timing; important for iOS Safari
-          if (e) e.preventDefault();
-          // Guard against double fire (touchend + click)
-          if (navClosing) return;
-          navClosing = true;
-
-          // Update active link immediately for feedback
-          navLinks.forEach(n => n.classList.remove('active'));
-          link.classList.add('active');
-
-          // After a short delay, scroll and update hash without jump
-          setTimeout(() => {
-            try {
-              targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              history.replaceState(null, '', href);
-            } catch {}
-            // Release guard after transition window
-            setTimeout(() => { navClosing = false; }, 300);
-          }, 60);
-        }
-      }
-
-      // Consolidated event listener for nav links
-      navLinks.forEach(link => {
-        const handler = function(e) { handleNavLinkActivate(e, this); };
-        // Use single event listener with options for better performance
-        ['click', 'touchend', 'pointerup'].forEach(eventType => {
-          link.addEventListener(eventType, handler, { passive: false });
-        });
-      });
-
-      // Optimized scroll handler with RAF throttling
-      function updateScrollEffects() {
-        if (!ticking) {
-          requestAnimationFrame(() => {
-            const scrollY = window.scrollY;
-            
-            // Update navbar scroll effect
-            if (scrollY > 50) {
-              navbar.classList.add('scrolled');
-            } else {
-              navbar.classList.remove('scrolled');
-            }
-            
-            // Update active nav link based on scroll position
-            const scrollPos = scrollY + 100;
-            
-            for (const section of sections) {
-              const sectionTop = section.offsetTop;
-              const sectionHeight = section.offsetHeight;
-              const sectionId = section.id;
-              
-              if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-                navLinks.forEach(link => {
-                  const isActive = link.getAttribute('href') === `#${sectionId}`;
-                  link.classList.toggle('active', isActive);
-                });
-                break;
-              }
-            }
-            
-            ticking = false;
-          });
-          ticking = true;
-        }
-      }
-
-      // Debounced scroll event
-      window.addEventListener('scroll', updateScrollEffects, { passive: true });
-
-      // Optimized intersection observer for fade animations
-      const observer = new IntersectionObserver(
-        function(entries) {
-          for (const entry of entries) {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
-              // Stop observing once element is visible for performance
-              observer.unobserve(entry.target);
-            }
-          }
-        },
-        {
-          threshold: 0.1,
-          rootMargin: '0px 0px -50px 0px'
-        }
-      );
-
-      // Observe all sections
-      sections.forEach(section => observer.observe(section));
-      
-      // Optimized outside click handler
-      document.addEventListener('click', function(e) {
-        if (navMenu.classList.contains('active') && 
-            !navMenu.contains(e.target) && 
-            !mobileMenuBtn.contains(e.target)) {
-          closeMenu();
-        }
-      }, { passive: true });
-    });
-  </script>
+  <script src="js/menu.js" defer></script>
+  <script src="js/ui.js" defer></script>
+  <script src="js/maptoggle.js" defer></script>
 
 </body>
 </html>

@@ -1037,9 +1037,9 @@ section.visible {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(13, 18, 40, 1);
+    width: 100vw;
+    height: 100vh;
+    background: rgba(13, 18, 40, 0.98);
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
     flex-direction: column;
