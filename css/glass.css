@@ -103,6 +103,16 @@ body::before {
   );
   pointer-events: none;
   mask: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent 55%);
+  animation: subtleShimmer 4s ease-in-out infinite;
+}
+
+@keyframes subtleShimmer {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 /* Subtle inner edge highlight */

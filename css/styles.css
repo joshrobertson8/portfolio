@@ -278,6 +278,7 @@ html {
   margin-bottom: 3rem;
   position: relative;
   transform: translateX(-4px);
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
 }
 
 .logo-j,
@@ -429,6 +430,29 @@ section.visible {
   font-weight: 300;
   letter-spacing: 2px;
   text-transform: uppercase;
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #f5f5f5 30%,
+    #ffffff 50%,
+    #f0f0f0 70%,
+    #ffffff 100%
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientFlow 8s ease infinite;
+  position: relative;
+}
+
+@keyframes gradientFlow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 /* Gradient reveal for headings */
@@ -1223,9 +1247,11 @@ section.visible {
 }
 
 .skill-category:hover {
-  transform: translateY(-5px);
+  transform: translateY(-5px) scale(1.02);
   background: rgba(255, 255, 255, 0.15);
   border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3),
+              0 0 30px rgba(255, 255, 255, 0.1);
 }
 
 .skill-icon {
@@ -1308,10 +1334,12 @@ section.visible {
 }
 
 .project-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-10px) scale(1.01);
   background: rgba(255, 255, 255, 0.15);
   border-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35),
+              0 0 40px rgba(255, 255, 255, 0.1) inset,
+              0 0 80px rgba(255, 255, 255, 0.05);
 }
 
 .project-image {
