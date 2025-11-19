@@ -1,0 +1,81 @@
+
+/* Skill Icons Grid */
+.skill-icon-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.skill-icon-img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: brightness(0.9); /* Slightly dim by default to pop on hover */
+  opacity: 0.9;
+}
+
+.skill-icon-img:hover {
+  transform: scale(1.2);
+  filter: brightness(1.1);
+  opacity: 1;
+}
+
+/* Hover Colors for Skills */
+.hover-python:hover { filter: drop-shadow(0 0 8px #3776AB); }
+.hover-java:hover { filter: drop-shadow(0 0 8px #007396); }
+.hover-c:hover { filter: drop-shadow(0 0 8px #A8B9CC); }
+.hover-javascript:hover { filter: drop-shadow(0 0 8px #F7DF1E); }
+.hover-typescript:hover { filter: drop-shadow(0 0 8px #3178C6); }
+.hover-html5:hover { filter: drop-shadow(0 0 8px #E34F26); }
+.hover-css3:hover { filter: drop-shadow(0 0 8px #1572B6); }
+.hover-react:hover { filter: drop-shadow(0 0 8px #61DAFB); }
+.hover-flask:hover { filter: drop-shadow(0 0 8px #000000); } /* Flask is black/white, maybe white glow? */
+.hover-playwright:hover { filter: drop-shadow(0 0 8px #2EAD33); }
+.hover-nodejs:hover { filter: drop-shadow(0 0 8px #339933); }
+.hover-docker:hover { filter: drop-shadow(0 0 8px #2496ED); }
+.hover-git:hover { filter: drop-shadow(0 0 8px #F05032); }
+.hover-firebase:hover { filter: drop-shadow(0 0 8px #FFCA28); }
+.hover-openai:hover { filter: drop-shadow(0 0 8px #412991); }
+.hover-google:hover { filter: drop-shadow(0 0 8px #4285F4); }
+.hover-plaid:hover { filter: drop-shadow(0 0 8px #000000); } /* Plaid is black */
+
+/* Adjust for dark theme visibility for black logos */
+.hover-flask {
+  filter: invert(1) brightness(2); /* Make Flask logo white/bright by default */
+  opacity: 0.9;
+}
+
+.hover-flask:hover {
+  filter: invert(1) brightness(2) drop-shadow(0 0 8px #ffffff);
+  opacity: 1;
+}
+
+.hover-plaid:hover {
+  filter: drop-shadow(0 0 8px #ffffff);
+}
+
+/* Instant Tooltip Styles */
+.skill-tooltip {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.1s ease;
+  transform: translate(-50%, -100%);
+  margin-top: -10px;
+  white-space: nowrap;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.skill-tooltip.visible {
+  opacity: 1;
+}

@@ -1,15 +1,15 @@
 /* Theme Variables */
 :root {
-  --bg-1: #0b1020;
-  --bg-2: #0e1530;
-  --text-primary: #e6edf3;
-  --text-secondary: rgba(230, 237, 243, 0.7);
-  --accent: #7aa2ff;
-  --accent-2: #9b8cff;
-  --glass-bg: rgba(255, 255, 255, 0.08);
-  --glass-border: rgba(255, 255, 255, 0.18);
-  --glass-hover: rgba(255, 255, 255, 0.14);
-  --shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+  --bg-1: #000000;
+  --bg-2: #111111;
+  --text-primary: #ffffff;
+  --text-secondary: #888888;
+  --accent: #ffffff;
+  --accent-2: #cccccc;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-hover: rgba(255, 255, 255, 0.1);
+  --shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
 }
 
 /* Reset and Base Styles */
@@ -20,17 +20,11 @@
 }
 
 body {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  font-family: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     sans-serif;
   line-height: 1.6;
   color: var(--text-primary);
-  background: radial-gradient(
-      1200px 800px at 10% -10%,
-      #12204a 0%,
-      transparent 50%
-    ),
-    radial-gradient(1200px 800px at 110% 10%, #2a175a 0%, transparent 50%),
-    linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 100%);
+  background: #050505;
   overflow-x: hidden;
 }
 
@@ -51,32 +45,21 @@ html {
   top: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(13, 18, 40, 0.7) 0%,
-    rgba(13, 18, 40, 0.35) 100%
-  );
-  backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(25px);
-  border-bottom: 1px solid var(--glass-border);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   z-index: 1000;
   transition: background 0.4s ease, border-bottom-color 0.4s ease,
-    backdrop-filter 0.4s ease, box-shadow 0.4s ease;
+    backdrop-filter 0.4s ease;
   padding: 0;
-  will-change: background, border-bottom-color, backdrop-filter, box-shadow;
 }
 
 .navbar.scrolled {
-  background: linear-gradient(
-    180deg,
-    rgba(13, 18, 40, 0.85) 0%,
-    rgba(13, 18, 40, 0.5) 100%
-  );
-  border-bottom-color: rgba(255, 255, 255, 0.28);
+  background: rgba(0, 0, 0, 0.9);
+  border-bottom-color: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
 }
 
 .nav-container {
@@ -96,112 +79,59 @@ html {
   font-size: 1.8rem;
   font-weight: 700;
   color: white;
-  letter-spacing: 4px;
-  transition: letter-spacing 0.3s ease, text-shadow 0.3s ease;
+  letter-spacing: -1px;
+  transition: opacity 0.3s ease;
   position: relative;
   cursor: pointer;
-  will-change: letter-spacing, text-shadow;
 }
 
 .nav-logo-text::after {
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.8),
-    transparent
-  );
-  transition: width 0.4s ease;
-}
-
-.nav-logo:hover .nav-logo-text::after {
-  width: 100%;
+  display: none;
 }
 
 .nav-logo:hover .nav-logo-text {
-  letter-spacing: 6px;
-  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  opacity: 0.8;
 }
 
 .nav-menu {
   display: flex;
-  gap: 3rem;
+  gap: 2rem;
   align-items: center;
-  background: var(--glass-bg);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  border: 1px solid var(--glass-border);
-  border-radius: 50px;
-  padding: 0.8rem 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
   margin-left: auto;
   margin-right: 0;
-  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease,
-    box-shadow 0.3s ease;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
-  will-change: background, border-color, transform, box-shadow;
+  transition: background 0.3s ease;
 }
 
 .nav-menu:hover {
-  background: var(--glass-hover);
-  border-color: rgba(255, 255, 255, 0.28);
-  transform: translateY(-1px);
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .nav-link {
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.8);
-  font-weight: 300;
+  color: #888;
+  font-weight: 400;
   font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+  transition: color 0.3s ease;
   position: relative;
   padding: 0.5rem 1rem;
-  border-radius: 25px;
-  will-change: color, transform;
 }
 
 .nav-link::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 25px;
-  opacity: 0;
-  transform: scale(0.8);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: -1;
-  will-change: opacity, transform;
+  display: none;
 }
 
 .nav-link:hover {
   color: white;
-  transform: translateY(-2px);
-  text-shadow: 0 0 10px rgba(122, 162, 255, 0.35);
-}
-
-.nav-link:hover::before {
-  opacity: 1;
-  transform: scale(1);
 }
 
 .nav-link.active {
   color: white;
-  background: linear-gradient(
-    90deg,
-    rgba(122, 162, 255, 0.25),
-    rgba(155, 140, 255, 0.25)
-  );
-  box-shadow: 0 8px 24px rgba(122, 162, 255, 0.25);
 }
 
 /* Mobile menu button */
@@ -258,19 +188,10 @@ html {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(
-      1200px 800px at 30% 10%,
-      rgba(122, 162, 255, 0.15),
-      transparent 50%
-    ),
-    radial-gradient(
-      1200px 800px at 80% 20%,
-      rgba(155, 140, 255, 0.1),
-      transparent 50%
-    ),
-    rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.7); /* Dark overlay for brutalist feel */
   z-index: 1;
 }
+
 
 /* Animated grid background */
 .hero::after {
@@ -362,28 +283,19 @@ html {
 .logo-j,
 .logo-r {
   font-size: 14rem;
-  font-weight: 100;
+  font-weight: 100; /* Thin weight as shown in image */
   line-height: 0.8;
   font-family: "Inter", sans-serif;
   position: relative;
-  transition: transform 0.3s ease, text-shadow 0.3s ease;
-  text-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
-  background: linear-gradient(
-    180deg,
-    #fff 0%,
-    rgba(255, 255, 255, 0.85) 60%,
-    rgba(122, 162, 255, 0.8) 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  transition: transform 0.3s ease;
+  color: #ffffff; /* White color to match image */
   will-change: transform;
 }
 
 .logo-j:hover,
 .logo-r:hover {
-  transform: scale(1.05);
-  text-shadow: 0 20px 40px rgba(255, 255, 255, 0.3);
+  transform: scale(1.02);
+  color: #fff;
 }
 
 /* Geometric decorative elements */
@@ -425,10 +337,10 @@ html {
 }
 
 .hero-number {
-  font-size: 0.85rem;
-  font-weight: 300;
-  letter-spacing: 4px;
-  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 6px;
+  margin-bottom: 2rem;
   opacity: 0.8;
   position: relative;
   animation: fadeIn 2s ease-out 1s both;
@@ -473,12 +385,12 @@ html {
 }
 
 .hero-name {
-  font-size: 1.1rem;
-  font-weight: 300;
-  letter-spacing: 8px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 12px;
   margin-bottom: 0;
   text-transform: uppercase;
-  opacity: 0.9;
+  opacity: 1;
   animation: fadeIn 2s ease-out 1.5s both;
 }
 
@@ -521,26 +433,11 @@ section.visible {
 
 /* Gradient reveal for headings */
 .text-reveal {
-  background: linear-gradient(
-    120deg,
-    #ffffff 0%,
-    rgba(200, 215, 255, 0.95) 40%,
-    #ffffff 80%
-  );
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: shimmer 6s ease-in-out infinite;
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 200% 50%;
-  }
+  color: #fff;
+  background: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  animation: none;
 }
 
 /* Ensure readability on dark sections */
@@ -573,7 +470,7 @@ section.visible {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.8); /* Darker overlay for brutalist feel */
   z-index: 1;
 }
 

@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initCursorRing();
   }
   initMagnetic();
+  initTooltips();
   // simple global to disable enhanced cursor from console if desired
   window.disableEnhancedCursor = () => {
     document.documentElement.classList.remove("cursor-enhanced");
@@ -127,4 +128,45 @@ function initMagnetic() {
     el.addEventListener("mousemove", onMove, { passive: true });
     el.addEventListener("mouseleave", onLeave, { passive: true });
   });
+}
+
+function initTooltips() {
+  const tooltip = document.createElement("div");
+  tooltip.className = "skill-tooltip";
+  document.body.appendChild(tooltip);
+
+  const skillIcons = document.querySelectorAll(".skill-icon-img");
+
+  skillIcons.forEach((icon) => {
+    // Remove default title to prevent browser tooltip
+    const title = icon.getAttribute("title");
+    if (title) {
+      icon.setAttribute("data-title", title);
+      icon.removeAttribute("title");
+    }
+
+    icon.addEventListener("mouseenter", (e) => {
+      const text = e.target.getAttribute("data-title");
+      if (text) {
+        tooltip.textContent = text;
+        tooltip.classList.add("visible");
+        updateTooltipPosition(e, tooltip);
+      }
+    });
+
+    icon.addEventListener("mousemove", (e) => {
+      updateTooltipPosition(e, tooltip);
+    });
+
+    icon.addEventListener("mouseleave", () => {
+      tooltip.classList.remove("visible");
+    });
+  });
+}
+
+function updateTooltipPosition(e, tooltip) {
+  const x = e.clientX;
+  const y = e.clientY;
+  tooltip.style.left = `${x}px`;
+  tooltip.style.top = `${y}px`;
 }
