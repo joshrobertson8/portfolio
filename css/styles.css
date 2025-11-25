@@ -192,7 +192,6 @@ html {
   z-index: 1;
 }
 
-
 /* Animated grid background */
 .hero::after {
   content: "";
@@ -447,7 +446,8 @@ section.visible {
 }
 
 @keyframes gradientFlow {
-  0%, 100% {
+  0%,
+  100% {
     background-position: 0% 50%;
   }
   50% {
@@ -1250,8 +1250,7 @@ section.visible {
   transform: translateY(-5px) scale(1.02);
   background: rgba(255, 255, 255, 0.15);
   border-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3),
-              0 0 30px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 255, 255, 0.1);
 }
 
 .skill-icon {
@@ -1338,8 +1337,7 @@ section.visible {
   background: rgba(255, 255, 255, 0.15);
   border-color: rgba(255, 255, 255, 0.3);
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35),
-              0 0 40px rgba(255, 255, 255, 0.1) inset,
-              0 0 80px rgba(255, 255, 255, 0.05);
+    0 0 40px rgba(255, 255, 255, 0.1) inset, 0 0 80px rgba(255, 255, 255, 0.05);
 }
 
 .project-image {
@@ -2154,7 +2152,7 @@ section.visible {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 0.75rem;
+  gap: 1rem;
 }
 
 .footer-text {
@@ -2166,9 +2164,42 @@ section.visible {
 .footer .social-link {
   color: var(--text-secondary);
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 }
+
+.footer .social-link i {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  transition: color 0.3s ease;
+}
+
+.footer .social-link img {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
 .footer .social-link:hover {
+  background: rgba(122, 162, 255, 0.15);
+  border-color: rgba(122, 162, 255, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(122, 162, 255, 0.2);
+}
+
+.footer .social-link:hover i,
+.footer .social-link:hover img {
   color: #fff;
+  opacity: 1;
+  filter: brightness(0) invert(1);
 }
 
 /* Responsive Design */
