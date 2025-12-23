@@ -10,11 +10,11 @@ import {
 } from "./lib/effects";
 
 const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about.html", label: "About" },
-  { href: "/experience.html", label: "Experience" },
-  { href: "/projects.html", label: "Projects" },
-  { href: "/contact.html", label: "Contact" },
+  { href: "/portfolio/", label: "Home" },
+  { href: "/portfolio/about.html", label: "About" },
+  { href: "/portfolio/experience.html", label: "Experience" },
+  { href: "/portfolio/projects.html", label: "Projects" },
+  { href: "/portfolio/contact.html", label: "Contact" },
 ];
 
 const App = () => {
