@@ -1583,6 +1583,7 @@ section.visible {
   text-align: center;
   transition: background 0.3s ease, transform 0.3s ease, border 0.3s ease;
   will-change: background, transform, border;
+  overflow: visible;
 }
 
 .skill-category:hover {
@@ -4026,6 +4027,7 @@ html.cursor-enhanced textarea {
   gap: 1.5rem;
   justify-content: center;
   margin-top: 1rem;
+  overflow: visible;
 }
 
 .skill-icon-img {
@@ -4044,17 +4046,19 @@ html.cursor-enhanced textarea {
   bottom: 100%;
   left: 50%;
   transform: translateX(-50%) translateY(-8px);
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.95);
   color: #fff;
-  padding: 6px 12px;
+  padding: 8px 14px;
   border-radius: 6px;
-  font-size: 12px;
+  font-size: 13px;
+  font-weight: 500;
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 1000;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 9999;
   font-family: 'Inter', sans-serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 .skill-icon-img:hover::after {
