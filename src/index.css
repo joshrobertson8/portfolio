@@ -4057,7 +4057,7 @@ html.cursor-enhanced textarea {
   pointer-events: none;
   transition: opacity 0.2s ease, transform 0.2s ease;
   z-index: 9999;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 

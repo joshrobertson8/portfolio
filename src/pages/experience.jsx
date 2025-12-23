@@ -1,9 +1,10 @@
-import { StrictMode } from "react";
+import { StrictMode, useEffect } from "react";
 import { createRoot } from "react-dom/client";
 import "../index.css";
 import Navbar from "../components/Navbar";
 import Experience from "../components/Experience";
 import Footer from "../components/Footer";
+import { initTooltips } from "../lib/effects";
 
 const navLinks = [
   { href: "/portfolio/", label: "Home" },
@@ -17,6 +18,11 @@ const ExperiencePage = () => {
   const currentPath = window.location.pathname;
   const activeSection =
     currentPath === "/" ? "/" : currentPath.replace(".html", "");
+
+  useEffect(() => {
+    const cleanup = initTooltips();
+    return () => cleanup && cleanup();
+  }, []);
 
   return (
     <div className="app-shell">
