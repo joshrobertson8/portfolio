@@ -74,11 +74,7 @@ const App = () => {
 
   return (
     <div className="app-shell">
-      <Navbar
-        activeSection="/"
-        navLinks={navLinks}
-        scrolled={scrolled}
-      />
+      <Navbar activeSection="/" navLinks={navLinks} scrolled={scrolled} />
       <main>
         <Hero enableParticles={!prefersReducedMotion} />
       </main>

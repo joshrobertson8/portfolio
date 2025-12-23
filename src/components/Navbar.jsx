@@ -7,9 +7,10 @@ const Navbar = ({ activeSection, navLinks, scrolled }) => {
 
   // Normalize activeSection for comparison
   const normalizeSection = (section) => {
-    if (section === '/' || section === '/index' || section === '#hero') return '/';
-    if (section.startsWith('#')) return section.replace('#', '/');
-    if (section.endsWith('.html')) return section.replace('.html', '');
+    if (section === "/" || section === "/index" || section === "#hero")
+      return "/";
+    if (section.startsWith("#")) return section.replace("#", "/");
+    if (section.endsWith(".html")) return section.replace(".html", "");
     return section;
   };
 
@@ -18,10 +19,7 @@ const Navbar = ({ activeSection, navLinks, scrolled }) => {
   return (
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="nav-container">
-        <a 
-          href="/" 
-          className="nav-logo"
-        >
+        <a href="/" className="nav-logo">
           <span className="nav-logo-text">JR</span>
         </a>
 
@@ -43,7 +41,9 @@ const Navbar = ({ activeSection, navLinks, scrolled }) => {
               <a
                 key={link.href}
                 href={link.href}
-                className={`nav-link ${normalizedActive === normalizedLink ? "active" : ""}`}
+                className={`nav-link ${
+                  normalizedActive === normalizedLink ? "active" : ""
+                }`}
               >
                 {link.label}
               </a>
