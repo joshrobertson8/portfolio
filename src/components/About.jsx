@@ -12,7 +12,7 @@ const About = () => (
           {/* Hero intro with photo */}
           <div className="about-hero">
             <div className="about-photo-feature hover-glow magnetic">
-              <img src="/assets/img/headshot.jpeg" alt="Josh Robertson" />
+              <img src="/portfolio/assets/img/headshot.jpeg" alt="Josh Robertson" />
               <div className="photo-accent" />
             </div>
             <div className="about-intro">
@@ -50,7 +50,7 @@ const About = () => (
         <div className="about-side">
           <div className="about-photo-secondary hover-glow magnetic">
             <img
-              src="/assets/img/headshot2.jpeg"
+              src="/portfolio/assets/img/headshot2.jpeg"
               alt="Josh Robertson - Casual"
             />
           </div>

@@ -151,7 +151,7 @@ export const skillsData = [
 export const projectsData = [
   {
     title: "Cover Letter Generator",
-    image: "/assets/img/covergen.png",
+    image: "/portfolio/assets/img/covergen.png",
     description:
       "Developed a web application that generates personalized cover letters using Google's Generative AI. Features include drag-and-drop resume upload and dynamic job description input.",
     tech: ["Flask", "HTML/CSS", "Google AI"],
@@ -160,7 +160,7 @@ export const projectsData = [
   },
   {
     title: "Conversational Translator",
-    image: "/assets/img/port.png",
+    image: "/portfolio/assets/img/port.png",
     description:
       "Built a real-time, context-aware translation web application enabling seamless multilingual conversations using Flask and Google Generative AI.",
     tech: ["Flask", "HTML/CSS", "Google AI"],
@@ -169,7 +169,7 @@ export const projectsData = [
   },
   {
     title: "Chess Engine",
-    image: "/assets/img/chess.jpg",
+    image: "/portfolio/assets/img/chess.jpg",
     description:
       "Created an interactive chess game featuring an AI opponent that uses minimax and alpha‑beta pruning, including game features like automatic queen promotion and comprehensive endgame detection.",
     tech: ["Python", "Pygame"],
@@ -178,7 +178,7 @@ export const projectsData = [
   },
   {
     title: "APSky",
-    image: "/assets/img/APSky.png",
+    image: "/portfolio/assets/img/APSky.png",
     description:
       "Full‑stack weather application with city search, current weather display, 5‑day forecasts, and dynamic themes. Features responsive UI, demo cities, and real‑time metrics including temperature, humidity, and wind speed.",
     tech: ["Node.js", "Express", "OpenWeatherMap API", "Vanilla JS"],
@@ -187,7 +187,7 @@ export const projectsData = [
   },
   {
     title: "ReadmeRanker",
-    image: "/assets/img/readmeranker.png",
+    image: "/portfolio/assets/img/readmeranker.png",
     description:
       "CLI tool that analyzes README.md files and provides quality scores with actionable improvement suggestions. Features local and remote GitHub analysis, AI‑powered recommendations, and configurable scoring weights.",
     tech: ["TypeScript", "Node.js", "Commander", "Gemini AI"],
@@ -196,7 +196,7 @@ export const projectsData = [
   },
   {
     title: "GptossUI",
-    image: "/assets/img/gptoss20b.png",
+    image: "/portfolio/assets/img/gptoss20b.png",
     description:
       "Modern chat interface for local Ollama AI models with real‑time streaming responses. Full‑stack TypeScript application featuring chat history, responsive design, and privacy‑focused local AI inference.",
     tech: ["TypeScript", "Express.js", "Ollama", "Tailwind CSS"],
