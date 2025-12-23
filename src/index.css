@@ -4034,6 +4034,32 @@ html.cursor-enhanced textarea {
   transition: transform 0.3s ease, filter 0.3s ease;
   filter: brightness(0.9); /* Slightly dim by default to pop on hover */
   opacity: 0.9;
+  position: relative;
+  cursor: pointer;
+}
+
+.skill-icon-img::after {
+  content: attr(title);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+  background: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+  font-family: 'Inter', sans-serif;
+}
+
+.skill-icon-img:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-4px);
 }
 
 .skill-icon-img:hover {
