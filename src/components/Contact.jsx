@@ -1,9 +1,7 @@
-import { useState } from 'react';
 import { contactMethods, mapUrls, socialLinks } from '../data/content';
 
 const Contact = () => {
-  const [mapDark, setMapDark] = useState(false);
-  const mapSrc = mapDark ? mapUrls.dark : mapUrls.light;
+  const mapSrc = mapUrls.light;
 
   return (
     <section id="contact" className="contact section-morph visible">
@@ -66,15 +64,6 @@ const Contact = () => {
               <div className="map-card">
                 <div className="map-header">
                   <h4>Find Me</h4>
-                  <div className="map-toggle">
-                    <input
-                      type="checkbox"
-                      id="toggle-map-mode"
-                      checked={mapDark}
-                      onChange={(event) => setMapDark(event.target.checked)}
-                    />
-                    <label htmlFor="toggle-map-mode">Dark Mode</label>
-                  </div>
                 </div>
                 <div className="map-container">
                   <iframe
