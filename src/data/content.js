@@ -183,7 +183,7 @@ export const projectsData = [
       "Full‑stack weather application with city search, current weather display, 5‑day forecasts, and dynamic themes. Features responsive UI, demo cities, and real‑time metrics including temperature, humidity, and wind speed.",
     tech: ["Node.js", "Express", "OpenWeatherMap API", "Vanilla JS"],
     github: "https://github.com/joshrobertson8/weatherAPI",
-    external: "https://github.com/joshrobertson8/apsky",
+    external: "https://github.com/joshrobertson8/weatherAPI",
   },
   {
     title: "ReadmeRanker",
@@ -195,13 +195,13 @@ export const projectsData = [
     external: "https://github.com/joshrobertson8/readmeranker",
   },
   {
-    title: "GptossUI",
+    title: "Multi-AI Chat",
     image: `${import.meta.env.BASE_URL}assets/img/gptoss20b.png`,
     description:
-      "Modern chat interface for local Ollama AI models with real‑time streaming responses. Full‑stack TypeScript application featuring chat history, responsive design, and privacy‑focused local AI inference.",
-    tech: ["TypeScript", "Express.js", "Ollama", "Tailwind CSS"],
-    github: "https://github.com/joshrobertson8/gptossApp",
-    external: "https://github.com/joshrobertson8/gptossui",
+      "Responsive web chat app that lets users talk to multiple free AI models (Hugging Face, Gemini, OpenAI, Mistral) using public/free API keys. Built with React + TypeScript + TailwindCSS frontend and Node.js + Express backend.",
+    tech: ["TypeScript", "React", "TailwindCSS", "Node.js", "Express"],
+    github: "https://github.com/joshrobertson8/multi-ai-chat",
+    external: "https://github.com/joshrobertson8/multi-ai-chat",
   },
 ];
 
