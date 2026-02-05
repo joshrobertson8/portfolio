@@ -1,19 +1,21 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { resolve } from "path";
+import { fileURLToPath } from "url";
 
-// https://vite.dev/config/
+const rootDir = fileURLToPath(new URL(".", import.meta.url));
+
 export default defineConfig({
   plugins: [react()],
   base: "/portfolio/",
   build: {
     rollupOptions: {
       input: {
-        main: resolve(__dirname, "index.html"),
-        about: resolve(__dirname, "about.html"),
-        experience: resolve(__dirname, "experience.html"),
-        projects: resolve(__dirname, "projects.html"),
-        contact: resolve(__dirname, "contact.html"),
+        main: resolve(rootDir, "index.html"),
+        about: resolve(rootDir, "about.html"),
+        experience: resolve(rootDir, "experience.html"),
+        projects: resolve(rootDir, "projects.html"),
+        contact: resolve(rootDir, "contact.html"),
       },
     },
   },
