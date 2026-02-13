@@ -18,7 +18,7 @@ const SiteNav = ({ active }) => {
     <header className="nav">
       <div className="nav-inner">
         <a className="nav-brand" href={base}>
-          Josh Robertson
+          JR
         </a>
 
         <button
