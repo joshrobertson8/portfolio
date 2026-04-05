@@ -47,6 +47,28 @@ ul {
   list-style: none;
 }
 
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--surface);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
 /* ── Navigation ─────────────────────────────────────────── */
 
 .nav {
@@ -92,11 +114,12 @@ ul {
   color: var(--muted);
   padding: 0.35rem 0.7rem;
   border-radius: 6px;
-  transition: color 0.2s;
+  transition: all 0.2s ease;
 }
 
 .nav-link:hover {
   color: var(--text);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .nav-link.active {
@@ -128,6 +151,19 @@ ul {
   margin: 0 auto;
   padding: 7rem 1.5rem 4rem;
   min-height: calc(100vh - 4rem);
+  opacity: 0;
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ── Shared Elements ────────────────────────────────────── */
@@ -181,12 +217,31 @@ ul {
 }
 
 .footer-links a {
+  position: relative;
   color: var(--muted);
   transition: color 0.2s;
 }
 
+.footer-links a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--accent);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
 .footer-links a:hover {
-  color: var(--accent);
+  color: var(--text);
+}
+
+.footer-links a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 /* ── Home ───────────────────────────────────────────────── */
@@ -420,14 +475,22 @@ ul {
   grid-template-columns: 2.5rem 1fr auto;
   gap: 1.5rem;
   align-items: start;
-  padding: 1.75rem 0;
+  padding: 1.75rem 1rem;
+  margin: 0 -1rem;
   border-bottom: 1px solid var(--border);
   text-decoration: none;
   color: inherit;
+  border-radius: 8px;
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .proj-row:last-child {
   border-bottom: none;
+}
+
+.proj-row:hover {
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom-color: transparent;
 }
 
 .proj-row:hover .proj-name {
@@ -618,4 +681,17 @@ a.contact-item-value:hover {
     align-items: flex-start;
     gap: 0.6rem;
   }
+}
+
+/* ── Reveal ─────────────────────────────────────────────── */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
