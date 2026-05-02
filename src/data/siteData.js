@@ -75,6 +75,14 @@ export const experience = [
 
 export const projects = [
   {
+    title: "Gateway",
+    description:
+      "AI-powered learning tool that turns pasted course material into runnable coding challenges, grades submissions in an integrated IDE, and produces a session report. Built on a FastAPI + Angular stack with a Dramatiq job queue for async LLM work.",
+    stack: ["Python", "FastAPI", "Angular", "PostgreSQL", "Dramatiq"],
+    image: `${import.meta.env.BASE_URL}assets/img/projects.jpg`,
+    href: "https://team-a4.apps.unc.edu/courses/3/gateway/learning",
+  },
+  {
     title: "Java Rate Limiter (In Dev)",
     description:
       "In development: Java rate limiter library for Spring Boot APIs with configurable policies and middleware integration.",
