@@ -26,7 +26,7 @@ const HomePage = () => (
       <section className="home-grid">
         <div className="home-block">
           <h2>Currently</h2>
-          <p>incoming software engineering intern @ apple</p>
+          <p>software engineering intern @ apple</p>
           <a className="link-arrow" href={`${base}experience.html`}>
             All experience <span aria-hidden="true">&rarr;</span>
           </a>
