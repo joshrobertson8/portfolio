@@ -33,11 +33,11 @@ export const toolbox = [
 
 export const experience = [
   {
-    role: "Incoming Software Engineering Intern",
+    role: "Software Engineering Intern",
     company: "Apple",
-    period: "Incoming",
+    period: "Summer 2026 - Present",
     location: "Cupertino, CA",
-    bullets: ["Summer 2026"],
+    bullets: ["Currently working as a Software Engineering Intern."],
   },
   {
     role: "Software Engineering Intern",
