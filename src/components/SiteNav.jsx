@@ -17,8 +17,9 @@ const SiteNav = ({ active }) => {
   return (
     <header className="nav">
       <div className="nav-inner">
-        <a className="nav-brand" href={base}>
-          JR
+        <a className="nav-brand" href={base} aria-label="Josh Robertson, home">
+          <span className="brand-mark">JR</span>
+          <span className="brand-name">Josh Robertson</span>
         </a>
 
         <button
@@ -26,9 +27,10 @@ const SiteNav = ({ active }) => {
           className="nav-toggle"
           onClick={() => setMenuOpen((o) => !o)}
           aria-expanded={menuOpen}
-          aria-label="Toggle navigation"
+          aria-label={menuOpen ? "Close navigation" : "Open navigation"}
         >
-          menu
+          <span className="menu-line" />
+          <span className="menu-line" />
         </button>
 
         <nav className={`nav-links${menuOpen ? " open" : ""}`}>

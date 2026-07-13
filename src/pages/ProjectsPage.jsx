@@ -5,31 +5,34 @@ import { projects } from "../data/siteData";
 const ProjectsPage = () => (
   <SiteLayout active="projects">
     <Reveal>
-      <h1 className="page-title">Projects</h1>
+      <section className="page-header">
+        <p className="eyebrow">Selected projects</p>
+        <h1>Built to solve.<br /><span>Designed to last.</span></h1>
+        <p>A collection of products, infrastructure, and experiments—each shaped by curiosity and refined through use.</p>
+      </section>
     </Reveal>
 
-    <hr className="divider" />
-
     <Reveal>
-      <div className="proj-list">
+      <div className="projects-grid">
         {projects.map((project, i) => (
           <a
             key={project.title}
-            className="proj-row"
+            className={`project-tile ${i === 0 ? "project-tile-featured" : ""}`}
             href={project.href}
             target="_blank"
             rel="noreferrer"
           >
-            <span className="proj-num">
-              {String(i + 1).padStart(2, "0")}
-            </span>
-            <div className="proj-body">
-              <h2 className="proj-name">{project.title}</h2>
-              <p className="proj-desc">{project.description}</p>
+            <div className={`project-tile-image${project.visual ? " project-visual" : ""}`}>
+              {project.image ? <img src={project.image} alt="" /> : <><span>RATE / LIMIT</span><strong>{project.visual}</strong><i>requests, controlled.</i></>}
             </div>
-            <div className="proj-meta">
-              <span className="proj-stack">{project.stack.join(" \u00b7 ")}</span>
-              <span className="proj-arrow" aria-hidden="true">&#8599;</span>
+            <div className="project-tile-body">
+              <div className="tile-kicker"><span>{String(i + 1).padStart(2, "0")}</span><span>{project.category}</span></div>
+              <h2>{project.title}</h2>
+              <p>{project.description}</p>
+              <div className="tile-footer">
+                <span>{project.stack.join(" · ")}</span>
+                <b aria-hidden="true">↗</b>
+              </div>
             </div>
           </a>
         ))}

@@ -9,9 +9,10 @@ export const navLinks = [
 export const profile = {
   name: "Josh Robertson",
   role: "Software Engineer",
-  location: "Chapel Hill, North Carolina",
+  location: "Cupertino, California",
   email: "joshrobertson753@gmail.com",
-  summary: "",
+  summary:
+    "I build dependable systems and thoughtful digital products at the intersection of backend engineering, developer tooling, and polished user experiences.",
 };
 
 export const focusAreas = [
@@ -56,9 +57,9 @@ export const experience = [
     period: "August 2025 - Present",
     location: "Chapel Hill, NC",
     bullets: [
-      "Leading a team of ~20 PMs, ios, and backend engineers to build an accessibility app supporting campus navigation.",
-      "Maintaining backend infrastructure including API's, databases, and pathfinding algorithms.",
-      "Find Luminary on the app store today",
+      "Leading a team of roughly 20 product managers, iOS developers, and backend engineers building an accessible campus navigation app.",
+      "Maintaining backend infrastructure spanning APIs, databases, and pathfinding algorithms.",
+      "Shipped Luminary on the App Store.",
     ],
   },
   {
@@ -76,30 +77,38 @@ export const experience = [
 export const projects = [
   {
     title: "Gateway",
+    category: "Developer education",
     description:
       "AI-powered learning tool that turns pasted course material into runnable coding challenges, grades submissions in an integrated IDE, and produces a session report. Built on a FastAPI + Angular stack with a Dramatiq job queue for async LLM work.",
     stack: ["Python", "FastAPI", "Angular", "PostgreSQL", "Dramatiq"],
     image: `${import.meta.env.BASE_URL}assets/img/projects.jpg`,
     href: "https://team-a4.apps.unc.edu/courses/3/gateway/learning",
+    featured: true,
   },
   {
-    title: "Java Rate Limiter (In Dev)",
+    title: "Java Rate Limiter",
+    category: "Backend infrastructure",
     description:
-      "In development: Java rate limiter library for Spring Boot APIs with configurable policies and middleware integration.",
+      "A rate-limiting library in development for Spring Boot APIs, with configurable policies and clean middleware integration.",
     stack: ["Java", "Spring Boot", "Maven"],
-    image: `${import.meta.env.BASE_URL}assets/img/APSky.png`,
+    image: null,
+    visual: "429",
     href: "https://github.com/joshrobertson8",
+    featured: true,
   },
   {
     title: "Cover Letter Generator",
+    category: "Applied AI",
     description:
       "Web app that generates tailored cover letters from resume and role inputs.",
     stack: ["Flask", "Google AI", "HTML/CSS"],
     image: `${import.meta.env.BASE_URL}assets/img/covergen.png`,
     href: "https://github.com/joshrobertson8/Cover-gen",
+    featured: true,
   },
   {
     title: "Conversational Translator",
+    category: "Applied AI",
     description:
       "Context-aware multilingual translator that supports real-time conversational flow.",
     stack: ["Flask", "Google AI", "Web"],
@@ -108,14 +117,16 @@ export const projects = [
   },
   {
     title: "APSky",
+    category: "Full-stack product",
     description:
       "Full-stack weather app with city search, forecasts, and custom backend written by me.",
     stack: ["Node.js", "Express", "OpenWeatherMap"],
-    image: `${import.meta.env.BASE_URL}assets/img/APSky.png`,
+    image: `${import.meta.env.BASE_URL}assets/img/APSky-optimized.jpg`,
     href: "https://github.com/joshrobertson8/weatherAPI",
   },
   {
     title: "ReadmeRanker",
+    category: "Developer tooling",
     description:
       "CLI scoring tool for README quality with actionable rewrite recommendations.",
     stack: ["TypeScript", "Node.js", "Commander"],
@@ -124,10 +135,11 @@ export const projects = [
   },
   {
     title: "GptossUI",
+    category: "Local AI",
     description:
       "TypeScript chat UI for local Ollama models with streaming responses.",
     stack: ["TypeScript", "Express", "Ollama"],
-    image: `${import.meta.env.BASE_URL}assets/img/gptoss20b.png`,
+    image: `${import.meta.env.BASE_URL}assets/img/gptoss20b-optimized.jpg`,
     href: "https://github.com/joshrobertson8/gptossApp",
   },
 ];
