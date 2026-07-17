@@ -372,20 +372,7 @@ ul {
 .exp-bullets li {
   color: var(--muted);
   font-size: 0.95rem;
-  padding-left: 1.25rem;
-  position: relative;
   line-height: 1.6;
-}
-
-.exp-bullets li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.55em;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--accent);
 }
 
 /* ── Projects ───────────────────────────────────────────── */

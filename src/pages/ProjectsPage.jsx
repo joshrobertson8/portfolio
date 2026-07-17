@@ -28,7 +28,7 @@ const ProjectsPage = () => (
               <p className="proj-desc">{project.description}</p>
             </div>
             <div className="proj-meta">
-              <span className="proj-stack">{project.stack.join(" \u00b7 ")}</span>
+              <span className="proj-stack">{project.stack.join(", ")}</span>
               <span className="proj-arrow" aria-hidden="true">&#8599;</span>
             </div>
           </a>
