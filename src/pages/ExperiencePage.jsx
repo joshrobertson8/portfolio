@@ -16,7 +16,7 @@ const ExperiencePage = () => (
           <article key={`${item.company}-${item.role}`} className="exp-item">
             <h2 className="exp-role">{item.role}</h2>
             <p className="exp-meta">
-              {item.company} — {item.location} — {item.period}
+              {item.company}, {item.location}, {item.period}
             </p>
             <ul className="exp-bullets">
               {item.bullets.map((bullet) => (
