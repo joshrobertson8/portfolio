@@ -1,6 +1,5 @@
 import SiteLayout from "../components/SiteLayout";
 import Reveal from "../components/Reveal";
-import { profile } from "../data/siteData";
 
 const base = import.meta.env.BASE_URL;
 
@@ -13,10 +12,6 @@ const HomePage = () => (
           <br />
           Robertson
         </h1>
-        <p className="hero-meta">
-          {profile.role} &mdash; {profile.location}
-        </p>
-        <p className="hero-summary">{profile.summary}</p>
       </section>
     </Reveal>
 

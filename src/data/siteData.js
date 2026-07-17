@@ -3,7 +3,7 @@ export const navLinks = [
   { slug: "about", label: "About" },
   { slug: "experience", label: "Experience" },
   { slug: "projects", label: "Projects" },
-  { slug: "contact", label: "Contact" },
+  { slug: "contact", label: "Links" },
 ];
 
 export const profile = {

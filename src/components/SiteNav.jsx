@@ -17,10 +17,6 @@ const SiteNav = ({ active }) => {
   return (
     <header className="nav">
       <div className="nav-inner">
-        <a className="nav-brand" href={base}>
-          JR
-        </a>
-
         <button
           type="button"
           className="nav-toggle"
