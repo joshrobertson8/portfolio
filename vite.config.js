@@ -7,7 +7,8 @@ const rootDir = fileURLToPath(new URL(".", import.meta.url));
 
 export default defineConfig({
   plugins: [react()],
-  base: "/",
+  // GitHub Pages sets BASE_PATH (e.g. "/portfolio/"); local builds serve at the root.
+  base: process.env.BASE_PATH || "/",
   build: {
     rollupOptions: {
       input: {
